@@ -1,18 +1,630 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wrtn 2.0</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 </head>
-<body>
-    <header>
+
+<body class="overflow-x-hidden font-pretendard">
+    <header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between" style="height: 70px;">
+        <div class="mx-auto w-[1440px] px-[100px] flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="/img/logo.png" alt="Wrtn Logo" class="w-[51px] h-auto" id="header-logo">
+            </div>
+            <div>
+                <button
+                    class="border-[2px] border-white rounded-full w-[128px] h-[46px] text-white transition-all font-semibold"
+                    id="try-button">사용해보기</button>
+            </div>
+        </div>
     </header>
-    
-    <main>
+    <aside class="absolute top-[100vh] z-[1]" style="left: calc((100% - 1440px)/2 + 100px);">
+        <nav class="text-white feature-nav">
+            <ul class="space-y-[8px] text-[#898989] font-[16px]">
+                <li class="font-semibold flex items-center active" data-feature="1">
+                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#FF854D] mr-2 nav-line"></div>뤼튼 특징 01
+                </li>
+                <li class="font-semibold flex items-center" data-feature="2">
+                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#FE68A4] mr-2 nav-line"></div>뤼튼 특징 02
+                </li>
+                <li class="font-semibold flex items-center" data-feature="3">
+                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#C8A333] mr-2 nav-line"></div>뤼튼 특징 03
+                </li>
+                <li class="font-semibold flex items-center" data-feature="4">
+                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#85CD66] mr-2 nav-line"></div>뤼튼 특징 04
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="min-h-screen">
+        <section id="section1"
+            class="relative w-full h-[100vh] flex flex-col items-center justify-center text-center gap-[6px]"
+            style="z-index: 10;">
+            <div class="flex gap-4 mb-4 text-group transition-opacity duration-500">
+                <h1 class="text-[60px] font-semibold text-white fade-up" id="text1">뤼튼 2.0은</h1>
+                <h1 class="text-[60px] font-semibold text-white fade-up" id="text2">뭐가</h1>
+                <h1 class="text-[60px] font-semibold text-white fade-up" id="text3">달라졌을까?</h1>
+            </div>
+            <h1 class="text-[60px] font-semibold text-white leading-[120%] fade-up" id="subText">나만의 AI 서포터<br>새로워진 뤼튼에서
+                만나보세요</h1>
+        </section>
+
+        <div id="video-container" class="fixed top-0 left-0 w-full h-full" style="z-index: 9;">
+            <video id="background-video" class="w-full h-full object-cover" autoplay muted loop>
+                <source src="video/background.mp4" type="video/mp4">
+            </video>
+        </div>
+        <section class="min-h-[110px]"></section>
+        <section id="section2"
+            class="w-[1440px] mx-auto min-h-[1152px] px-[180px] pt-[140px] pb-[100px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url('img/bg2.png'); opacity: 0;">
+            <div class="flex flex-col items-center justify-between font-semibold">
+                <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
+                <p class="text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px]">뤼튼의 모든 기능이<br>나를 위한 단 하나의
+                    서포터로 통합됩니다</p>
+                <p class="text-[16px] text-[#858E95] leading-[150%] text-center mb-[50px]">더 정교한 문맥 이해와 자연스러운 문장 구성이
+                    가능하도록 AI 모델이 업그레이드되었습니다.<br>
+                    이를 통해 보다 창의적이고 목적에 맞는 콘텐츠 생성이 가능해졌습니다.</p>
+                <img src="img/ui1.png" alt="new-wrtn" class="w-[1074px] h-auto">
+            </div>
+        </section>
+        <section id="section3" class="w-full bg-[#151515] pt-[190px] pb-[260px]">
+            <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                <div class="w-[30%] pr-[30px]"></div>
+                <div class="w-[70%] reveal-section">
+                    <p id="feature1" class="text-[#FF854D] text-[16px] font-semibold mb-[16px]">뤼튼 특징 01</p>
+                    <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                        style="background: linear-gradient(to right, rgba(248, 249, 251, 1), rgba(216, 183, 147, 1)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                        강력한<br>성능 업그레이드</p>
+                    <p class="text-[16px] text-[#898989] leading-[140%] mb-[80px] font-semibold">목적 선택이나 고민 없이<br>최고의
+                        한국어 성능을 만나보세요.
+                    </p>
+                    <img src="img/ui2.png" alt="ui2" class="w-full h-auto rounded-[16px]">
+                    <div class="mt-[20px] flex items-start">
+                        <div class="w-[45%] text-[#CACACA] opacity-90 text-[24px] font-semibold">
+                            최고 성능의 모델
+                        </div>
+                        <div class="w-[40%] text-[#646464] text-[16px] leading-[150%]">
+                            최신 AI 모델(GPT-4o, GPT-4.5, o1, Claude 3.7, Gemini 2)을 알아서 알맞게 사용해요.
+                        </div>
+                    </div>
+                    <div class="mt-[50px] flex items-start gap-[20px]">
+                        <div class="w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold">
+                            <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
+                                <img src="img/ui3.png" alt="ui3" class="w-full h-full object-cover">
+                            </div>
+                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold mt-[20px]">전문적인 업무</p>
+                            <p class="mt-[17px] text-[#646464] text-[16px] leading-[150%]">문서와 이미지를 분석하거나, 복잡한 업무 및<br
+                                    class="hidden sm:block">과제 요청도 전문적으로 수행해요.</p>
+                        </div>
+                        <div class="w-1/2 text-[#646464] text-[16px] leading-[150%]">
+                            <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
+                                <img src="img/ui4.png" alt="ui4" class="w-full h-full object-cover">
+                            </div>
+                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold mt-[20px]">최고 성능의 모델</p>
+                            <p class="mt-[17px] text-[#646464] text-[16px] leading-[150%]">인터넷 검색이 필요할 때와 아닐 때를<br
+                                    class="hidden sm:block">자동으로 구분하여 최적의 답변을 제공해요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="banner1" class="w-full relative h-[560px] bg-cover bg-center bg-no-repeat"
+            style="background-image: url('img/banner1.png');">
+            <div
+                class="relative w-[1440px] mx-auto flex flex-col items-start justify-center h-full px-[100px] reveal-section">
+                <p class="text-[#F8F9FB] text-[34px] font-semibold leading-[140%] mb-[20px]">
+                    더 정교한 문맥 이해와 자연스러운 문장 구성이<br>
+                    가능하도록 AI 모델이 업그레이드되었습니다.<br>
+                    이를 통해 보다 창의적이고 목적에 맞는<br>
+                    콘텐츠 생성이 가능해졌습니다.
+                </p>
+                <p class="text-white opacity-60 text-[16px] font-medium leading-[150%]">
+                    OpenAI | Sara Zylfo
+                </p>
+            </div>
+        </section>
+        <section id="sectionGroup" class="w-full bg-[#F8F8F8]">
+            <div id="section4" class="bg-no-repeat bg-cover bg-center pt-[190px] pb-[132px]"
+                style="background-image: url('img/bg3.png');">
+                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                    <div class="w-[30%] pr-[30px]"></div>
+                    <div class="w-[70%] reveal-section">
+                        <p id="feature2" class="text-[#FE68A4] text-[16px] font-semibold mb-[16px]">뤼튼 특징 02</p>
+                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                            style="background: linear-gradient(90deg, #353A40 0%, #A35165 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                            나를 위한 진화</p>
+                        <p class="text-[16px] text-[#50575F] leading-[140%] mb-[80px] font-semibold">사용하면 할수록 더 정확하게
+                            이해하고<br>
+                            나에게 맞춰 똑똑해져요.
+                        </p>
+                        <!-- CARD -->
+                        <div
+                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
+                            <div class="flex flex-col justify-center ml-[36px]">
+                                <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">이전보다<br>10배 향상된 기억력
+                                </p>
+                                <p
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    오래전에 한 이야기도<br>기억하여 대화에 반영해요</p>
+                            </div>
+                            <img src="img/img2-1.png" alt="ui5"
+                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                        </div>
+                        <div
+                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
+                            <div class="flex flex-col justify-center ml-[36px]">
+                                <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">나만을 위한<br>맞춤형 뉴스레터
+                                </p>
+                                <p
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    나의 관심사와 흥미에 맞춘 최신<br>
+                                    정보를 정리해서 보내줘요</p>
+                            </div>
+                            <img src="img/img2-2.png" alt="ui5"
+                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                        </div>
+                        <div
+                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
+                            <div class="flex flex-col justify-center ml-[36px]">
+                                <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">AI가 먼저<br>다가오는 경험</p>
+                                <p
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    유용한 정보나 소식을 놓치지 않도록<br>
+                                    먼저 말을 걸어줘요.</p>
+                            </div>
+                            <img src="img/img2-3.png" alt="ui5"
+                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                        </div>
+                        <div
+                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center">
+                            <div class="flex flex-col justify-center ml-[36px]">
+                                <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">여전히<br>강력한 보안</p>
+                                <p
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    최고 수준의 보안과 암호화로<br>안전하게 대화할 수 있어요.</p>
+                            </div>
+                            <img src="img/img2-4.png" alt="ui5"
+                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section5" class="px-[100px] pt-[30px] pb-[220px] bg-[#F8F8F8]">
+                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                    <div class="w-[30%] pr-[30px]"></div>
+                    <div class="w-[70%] reveal-section">
+                        <p id="feature3" class="text-[#C8A333] text-[16px] font-semibold mb-[16px]">뤼튼 특징 03</p>
+                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                            style="background: linear-gradient(90deg, #353A40 0%, #A6956A 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                            무료를 넘어 소득까지</p>
+                        <p class="text-[16px] text-[#50575F] leading-[140%] font-semibold mb-[3px]">가볍게 수행할 수 있는 앱테크
+                            미션으로<br>
+                            소득을 만들어보세요.
+                        </p>
+                        <p class="text-[#858E95] text-[13px] leading-[150%] mb-[114px]">*성냥이 뤼튼 캐시로 변경됩니다.</p>
+                        <div class="flex flex-col">
+                            <!-- CARD -->
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <img src="img/savings.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
+                                    <p
+                                        class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
+                                        뤼튼을 쓰기만해도<br>주는 캐시</p>
+                                    <p class="text-[#858E95] text-[16px] font-semibold leading-[150%]">출석체크와 서포터가 보낸
+                                        뉴스레터를<br>읽기만 해도 매일 캐시를 받을 수 있어요.</p>
+                                </div>
+                                <img src="img/img3-1.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                            </div>
+                            <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <img src="img/ads_click.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
+                                    <p
+                                        class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
+                                        가장 쉬운<br>앱테크 미션</p>
+                                    <p class="text-[#858E95] text-[16px] font-semibold leading-[150%]">천보기, 팔로우, 설문 등 타
+                                        서비스 대비<br>
+                                        쉬운 미션으로 더 많은 캐시를 모을 수 있어요.</p>
+                                </div>
+                                <img src="img/img3-3.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                            </div>
+                            <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <img src="img/money_bag.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
+                                    <p
+                                        class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
+                                        모은 캐시를 스토어에서<br>현금처럼 사용</p>
+                                    <p class="text-[#858E95] text-[16px] font-semibold leading-[150%]">모은 캐시는 상품권으로
+                                        교환하거나<br>
+                                        물건을 직접 구매할 수 있어요.</p>
+                                </div>
+                                <img src="img/img3-2.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section6" class="px-[100px] pt-[190px] pb-[180px] bg-[#151515]">
+                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                    <div class="w-[30%] pr-[30px]"></div>
+                    <div class="w-[70%] reveal-section">
+                        <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px]">뤼튼 특징 04</p>
+                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                            style="background: linear-gradient(90deg, #F8F9FB 0%, #D0FFBA 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                            업무의 처음부터 끝까지</p>
+
+                        <p class="text-[16px] text-[#898989] leading-[140%] font-semibold mb-[80px]">업무와 과제에 특화된
+                            도구들은<br>
+                            변함없이 무제한 무료로 사용할 수 있어요.
+                        </p>
+                        <div class="grid grid-cols-2 w-full gap-[20px]">
+                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                                <p
+                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    AI 탐지 방어</p>
+                                <p
+                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    AI가 감지하지 못하도록<br>
+                                    자연스러운 말투 교정</p>
+                                <img src="img/img4-1.png" class="mt-[90px]">
+                            </div>
+                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                                <p
+                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    블로그</p>
+                                <p
+                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    고품질의 블로그 포스팅을<br>
+                                    자동으로 완성</p>
+                                <img src="img/img4-2.png" class="mt-[90px]">
+                            </div>
+                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                                <p
+                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    AI 완벽 요약</p>
+                                <p
+                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    유튜브 영상, 웹사이트, 문서 등<br>
+                                    긴 글을 완벽하게 요약</p>
+                                <img src="img/img4-3.png" class="mt-[90px]">
+                            </div>
+                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                                <p
+                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    서포터와 함께 사용</p>
+                                <p
+                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    결과물을 서포터와 함께<br>
+                                    편집할 수 있어요</p>
+                                <img src="img/img4-4.png" class="mt-[90px]">
+                            </div>
+                        </div>
+                        <div class="border-[1px] border-[#2E2E2E] rounded-[16px] mt-[20px]">
+                            <p
+                                class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px] pt-[20px] px-[20px]">
+                                20개 이상의 다양한 도구</p>
+                            <p
+                                class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px] px-[20px]">
+                                유튜브 영상, 웹사이트, 문서 등<br>
+                                긴 글을 완벽하게 요약
+                            </p>
+                            <img src="img/img4-5.png" class="mt-[36px] mb-[52px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <footer>
+    <footer class="w-full bg-[#353A40]">
+        <div class="mx-auto w-[1440px] px-[100px] py-[60px] flex items-start justify-between">
+            <div>
+                <p class="text-[#ADB6BD] text-[28px] font-semibold">새로워진 뤼튼2.0</p>
+            </div>
+            <div class="h-full flex flex-col items-start gap-3 text-[16px]">
+                <div class="flex flex-col items-start">
+                    <a target="_blank" href="https://wrtn.io"
+                        class="text-[#ADB6BD] text-[16px] hover:text-white transition-colors">wrtn.io</a>
+                    <a target="_blank" href="https://wrtn.io/blog"
+                        class="text-[#ADB6BD] text-[16px] hover:text-white transition-colors">Blog</a>
+                    <a target="_blank" href="https://instagram.com/wrtn.ai"
+                        class="text-[#ADB6BD] text-[16px] hover:text-white transition-colors">Instagram</a>
+                </div>
+                <div class="mt-[86px]">
+                    <p class="text-[#ADB6BD] text-[14px]">© 2025 Wrtn</p>
+                </div>
+            </div>
+        </div>
     </footer>
+    <script>
+        $(document).ready(function () {
+            var asideLocked = false;
+            var initialRadius = $(window).width() / 1.5;
+            const minRadius = 30;
+            var maxScroll;
+
+            // 최대 스크롤 위치 계산 함수
+            function calculateMaxScroll() {
+                var ui1Image = $('img[src="img/ui1.png"]');
+                var ui1Height = ui1Image.height();
+                var ui1Offset = $(window).height() + 558;
+                var windowHeight = $(window).height();
+                var offset = -84;
+                var result = ui1Offset + (ui1Height / 2) - (windowHeight / 2) - (minRadius * 2) + offset;
+                return result;
+            }
+
+            // 이미지 로드 시 최대 스크롤 계산
+            $('img[src="img/ui1.png"]').on('load', function () {
+                maxScroll = calculateMaxScroll();
+            });
+
+            // 이미지가 이미 로드된 경우 최대 스크롤 계산
+            if ($('img[src="img/ui1.png"]').complete) {
+                maxScroll = calculateMaxScroll();
+            }
+
+            // 창 크기 변경 시 값 재계산
+            $(window).resize(function () {
+                initialRadius = $(window).width() / 1.5;
+                maxScroll = calculateMaxScroll();
+                $(window).trigger('scroll');
+            });
+
+            // 비디오 컨테이너 스타일 업데이트 함수
+            function updateVideoContainer(scrollPos) {
+                if (scrollPos >= maxScroll) {
+                    if ($('#video-container').css('position') !== 'absolute') {
+                        $('#video-container').css({
+                            position: 'absolute',
+                            top: maxScroll + 'px'
+                        });
+                    }
+                } else {
+                    if ($('#video-container').css('position') !== 'fixed') {
+                        $('#video-container').css({
+                            position: 'fixed',
+                            top: '0'
+                        });
+                    }
+                }
+            }
+
+            // 헤더 스타일 업데이트 함수
+            function updateHeaderStyle(isMinSize) {
+                if (isMinSize) {
+                    $('#header-logo').attr('src', '/img/logo_k.png');
+                    $('#try-button').css({
+                        'border-color': '#060606',
+                        'background-color': '#22252A'
+                    });
+                    $('header').addClass('scrolled');
+                    $('#section2').css('opacity', '1');
+                } else {
+                    $('#header-logo').attr('src', '/img/logo.png');
+                    $('#try-button').css({
+                        'border-color': 'white',
+                        'background-color': 'transparent'
+                    });
+                    $('header').removeClass('scrolled');
+                }
+            }
+            function updateHeaderStyleCombined(scrollPos) {
+                var headerHeight = $('header').outerHeight();
+
+                // 1. 기본 테마 설정: 스크롤이 maxScroll 이상이면 다크 테마(true), 아니면 화이트 테마(false)
+                var isDarkTheme = (scrollPos >= maxScroll);
+
+                // 2. 특정 섹션에서 테마 반전
+                var section3Top = $('#section3').offset().top;
+                var section3Bottom = section3Top + $('#section3').outerHeight();
+                var section6Top = $('#section6').offset().top;
+                var section6Bottom = section6Top + $('#section6').outerHeight();
+                var banner1Top = $('#banner1').offset().top;
+                var banner1Bottom = banner1Top + $('#banner1').outerHeight();
+
+                // 헤더가 섹션3 또는 섹션6 영역에 있는지 확인
+                var isHeaderInSpecialSection = (
+                    (scrollPos + headerHeight >= section3Top && scrollPos < section3Bottom) ||
+                    (scrollPos + headerHeight >= section6Top && scrollPos < section6Bottom)
+                );
+
+                // 헤더가 배너1 영역에 있는지 확인
+                var isHeaderInBanner1 = (scrollPos + headerHeight >= banner1Top && scrollPos < banner1Bottom);
+
+                // 특별 섹션 내부에 있으면 테마 반전
+                if (isHeaderInSpecialSection) {
+                    isDarkTheme = !isDarkTheme;
+                }
+
+                // 배너1 영역에 있으면 항상 화이트 테마 적용
+                if (isHeaderInBanner1) {
+                    isDarkTheme = false;
+                }
+
+                // 3. 최상단(스크롤 0)에서는 항상 화이트 테마 적용
+                if (scrollPos === 0) {
+                    isDarkTheme = false;
+                }
+
+                // 최종 결정된 테마 적용
+                updateHeaderStyle(isDarkTheme);
+            }
+
+            // 스크롤 애니메이션
+            $(window).scroll(function () {
+                var scrollPos = $(window).scrollTop();
+                var headerHeight = $('header').outerHeight();
+
+                // aside 위치 조정
+                var feature1Top = $('#feature1').offset().top;
+                if (scrollPos < feature1Top - 100) {
+                    $('aside').css({
+                        position: 'absolute',
+                        top: feature1Top
+                    });
+                } else {
+                    $('aside').css({
+                        position: 'fixed',
+                        top: '100px'
+                    });
+                }
+
+                // 최대 스크롤 값이 없으면 계산
+                if (!maxScroll) {
+                    maxScroll = calculateMaxScroll();
+                }
+
+                // 비디오 원형 크기 및 스타일 업데이트
+                var newRadius;
+                if (scrollPos >= maxScroll) {
+                    newRadius = minRadius;
+                } else {
+                    newRadius = initialRadius - ((initialRadius - minRadius) * scrollPos / maxScroll);
+
+                    // section2 투명도 계산
+                    var threshold = 0.9;
+                    var progress = 1 - ((newRadius - minRadius) / (initialRadius - minRadius));
+                    var sectionOpacity = progress > threshold ? (progress - threshold) / (1 - threshold) : 0;
+                    $('#section2').css('opacity', sectionOpacity);
+                }
+
+                // 비디오 컨테이너 위치 업데이트
+                updateVideoContainer(scrollPos);
+
+                // 비디오 원형 크기 설정
+                $('#video-container').css('clip-path', 'circle(' + newRadius + 'px at center)');
+
+                // reveal-section 요소 활성화
+                $('.reveal-section').each(function () {
+                    var elementTop = $(this).offset().top;
+                    var elementVisible = 250;
+
+                    if (scrollPos > elementTop - window.innerHeight + elementVisible) {
+                        $(this).addClass('active');
+                    }
+                });
+                updateHeaderStyleCombined(scrollPos);
+                // var section6Top = $('#section6').offset().top;
+                // var section6Bottom = section6Top + $('#section6').outerHeight();
+                // var windowCenter = scrollPos + window.innerHeight / 2;
+                // if (windowCenter >= section6Top && windowCenter < section6Bottom) {
+                //     if (!$("#sectionGroup").hasClass("section6-active")) {
+                //         $("#sectionGroup").addClass("section6-active");
+                //         gsap.to("#sectionGroup", { backgroundColor: "#151515", duration: 0.5 });
+                //     }
+                // } else {
+                //     if ($("#sectionGroup").hasClass("section6-active")) {
+                //         $("#sectionGroup").removeClass("section6-active");
+                //         // 원래 배경색이 "#F8F8F8"라고 가정 (필요에 따라 수정)
+                //         gsap.to("#sectionGroup", { backgroundColor: "#F8F8F8", duration: 0.5 });
+                //     }
+                // }
+            });
+
+            // Aside 스크롤 동작 및 active 클래스 업데이트
+            function updateAside() {
+                var scrollPos = $(window).scrollTop();
+                var asideShouldBeVisible = false;
+                var banner1Top = $('#banner1').offset().top - 250;
+
+                // aside 표시 여부 결정
+                if (scrollPos + 100 < banner1Top) {
+                    asideShouldBeVisible = true;
+                } else if (scrollPos + 100 >= $('#feature2').offset().top - 180) {
+                    asideShouldBeVisible = true;
+                }
+
+                // aside 표시/숨김 처리
+                if (asideShouldBeVisible || asideLocked) {
+                    $('aside').fadeIn();
+                } else {
+                    $('aside').fadeOut();
+                }
+
+                // 현재 활성화된 feature 메뉴 업데이트
+                updateActiveFeatureMenu(scrollPos);
+            }
+
+            // 활성화된 feature 메뉴 업데이트 함수
+            function updateActiveFeatureMenu(scrollPos) {
+                var features = [
+                    { id: '#feature1', menuItem: $('aside li[data-feature="1"]') },
+                    { id: '#feature2', menuItem: $('aside li[data-feature="2"]') },
+                    { id: '#feature3', menuItem: $('aside li[data-feature="3"]') },
+                    { id: '#feature4', menuItem: $('aside li[data-feature="4"]') }
+                ];
+
+                var currentFeatureIndex = -1;
+
+                // 아래에서부터 위로 확인하여 가장 가까운 섹션 찾기
+                for (var i = features.length - 1; i >= 0; i--) {
+                    var featureTop = $(features[i].id).offset().top;
+
+                    if (scrollPos >= featureTop - 300) {
+                        currentFeatureIndex = i;
+                        break;
+                    }
+                }
+
+                // 현재 특징 섹션이 있으면 해당 메뉴 아이템 활성화
+                if (currentFeatureIndex >= 0) {
+                    var currentFeature = features[currentFeatureIndex];
+                    if (!currentFeature.menuItem.hasClass('active')) {
+                        $('aside li').removeClass('active');
+                        currentFeature.menuItem.addClass('active');
+                    }
+                }
+            }
+
+            // 스크롤 이벤트에 aside 업데이트 함수 연결
+            $(window).on('scroll', updateAside);
+
+            // aside 메뉴 클릭 이벤트
+            $('aside li').on('click', function () {
+                asideLocked = true;
+                var featureNum = $(this).attr('data-feature');
+                var targetId = '#feature' + featureNum;
+                var targetOffset = $(targetId).offset().top - 70 - 20;
+
+                $('html, body').animate({ scrollTop: targetOffset }, 500, function () {
+                    asideLocked = false;
+                });
+            });
+
+            // 텍스트 애니메이션 함수
+            function animateTexts() {
+                $('#text1').addClass('animate-fade-up');
+
+                setTimeout(function () {
+                    $('#text2').addClass('animate-fade-up');
+
+                    setTimeout(function () {
+                        $('#text3').addClass('animate-fade-up');
+
+                        setTimeout(function () {
+                            $('.text-group').css('opacity', '0.5');
+                            $('#subText').addClass('animate-fade-up');
+                        }, 760);
+                    }, 600);
+                }, 400);
+            }
+
+            // 페이지 로드 후 텍스트 애니메이션 시작
+            setTimeout(animateTexts, 100);
+        });
+    </script>
 </body>
+
 </html>

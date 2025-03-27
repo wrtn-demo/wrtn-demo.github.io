@@ -1,0 +1,163 @@
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
+
+body {
+    word-break: keep-all;
+}
+
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    clip-path: circle(100% at center);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+}
+
+#try-button {
+    transition: all 0.3s ease;
+}
+
+#section2 {
+    transition: opacity 0.8s ease;
+}
+
+.feature-nav li {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.feature-nav li:nth-child(1):hover {
+    color: #FF854D;
+    opacity: 1;
+}
+
+.feature-nav li:nth-child(2):hover {
+    color: #FE68A4;
+    opacity: 1;
+}
+
+.feature-nav li:nth-child(3):hover {
+    color: #C8A333;
+    opacity: 1;
+}
+
+.feature-nav li:nth-child(4):hover {
+    color: #85CD66;
+    opacity: 1;
+}
+
+.feature-nav li:nth-child(1):hover .nav-line {
+    background-color: #FF854D;
+}
+
+.feature-nav li:nth-child(2):hover .nav-line {
+    background-color: #FE68A4;
+}
+
+.feature-nav li:nth-child(3):hover .nav-line {
+    background-color: #C8A333;
+}
+
+.feature-nav li:nth-child(4):hover .nav-line {
+    background-color: #85CD66;
+}
+
+.feature-nav li.active:nth-child(1) {
+    color: #FF854D;
+    opacity: 1;
+}
+
+.feature-nav li.active:nth-child(2) {
+    color: #FE68A4;
+    opacity: 1;
+}
+
+.feature-nav li.active:nth-child(3) {
+    color: #C8A333;
+    opacity: 1;
+}
+
+.feature-nav li.active:nth-child(4) {
+    color: #85CD66;
+    opacity: 1;
+}
+
+.feature-nav li .nav-line {
+    display: none;
+    width: 0;
+}
+
+.feature-nav li.active .nav-line {
+    display: block;
+    animation: lineGrow 0.4s ease forwards;
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 37px;
+    }
+}
+
+.feature-nav li.active:nth-child(1) .nav-line {
+    display: block;
+    background-color: #FF854D;
+}
+
+.feature-nav li.active:nth-child(2) .nav-line {
+    display: block;
+    background-color: #FE68A4;
+}
+
+.feature-nav li.active:nth-child(3) .nav-line {
+    display: block;
+    background-color: #C8A333;
+}
+
+.feature-nav li.active:nth-child(4) .nav-line {
+    display: block;
+    background-color: #85CD66;
+}
