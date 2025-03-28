@@ -30,16 +30,16 @@
         <nav class="text-white feature-nav">
             <ul class="space-y-[8px] text-[#898989] font-[16px]">
                 <li class="font-semibold flex items-center active" data-feature="1">
-                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#FF854D] mr-2 nav-line"></div>뤼튼 특징 01
+                    <div class="nav-line"></div>뤼튼 특징 01
                 </li>
                 <li class="font-semibold flex items-center" data-feature="2">
-                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#FE68A4] mr-2 nav-line"></div>뤼튼 특징 02
+                    <div class="nav-line"></div>뤼튼 특징 02
                 </li>
                 <li class="font-semibold flex items-center" data-feature="3">
-                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#C8A333] mr-2 nav-line"></div>뤼튼 특징 03
+                    <div class="nav-line"></div>뤼튼 특징 03
                 </li>
                 <li class="font-semibold flex items-center" data-feature="4">
-                    <div class="w-[37px] h-[1px] flex-shrink-0 bg-[#85CD66] mr-2 nav-line"></div>뤼튼 특징 04
+                    <div class="nav-line"></div>뤼튼 특징 04
                 </li>
             </ul>
         </nav>
@@ -48,7 +48,7 @@
         <section id="section1"
             class="relative w-full h-[100vh] flex flex-col items-center justify-center text-center gap-[6px]"
             style="z-index: 10;">
-            <div class="flex gap-4 mb-4 text-group transition-opacity duration-500">
+            <div class="flex gap-4 text-group transition-opacity duration-500 h-[72px]" style="line-height: normal;">
                 <h1 class="text-[60px] font-semibold text-white fade-up" id="text1">뤼튼 2.0은</h1>
                 <h1 class="text-[60px] font-semibold text-white fade-up" id="text2">뭐가</h1>
                 <h1 class="text-[60px] font-semibold text-white fade-up" id="text3">달라졌을까?</h1>
@@ -839,9 +839,7 @@
                     newRadius = minRadius;
                 } else {
                     newRadius = initialRadius - ((initialRadius - minRadius) * scrollPos / maxScroll);
-
-                    // section2 투명도 계산
-                    var threshold = 0.9;
+                    var threshold = 0.6;
                     var progress = 1 - ((newRadius - minRadius) / (initialRadius - minRadius));
                     var sectionOpacity = progress > threshold ? (progress - threshold) / (1 - threshold) : 0;
                     $('#section2').css('opacity', sectionOpacity);

@@ -59,108 +59,87 @@ header.scrolled {
 #section2 {
     transition: opacity 0.8s ease;
 }
-
 .feature-nav li {
     transition: all 0.3s ease;
     cursor: pointer;
     opacity: 0.6;
-}
+  }
 
-.feature-nav li:nth-child(1):hover {
+  /* Hover 시 텍스트 색상 및 불투명도 */
+  .feature-nav li:nth-child(1):hover {
     color: #FF854D;
     opacity: 1;
-}
-
-.feature-nav li:nth-child(2):hover {
+  }
+  .feature-nav li:nth-child(2):hover {
     color: #FE68A4;
     opacity: 1;
-}
-
-.feature-nav li:nth-child(3):hover {
+  }
+  .feature-nav li:nth-child(3):hover {
     color: #C8A333;
     opacity: 1;
-}
-
-.feature-nav li:nth-child(4):hover {
+  }
+  .feature-nav li:nth-child(4):hover {
     color: #85CD66;
     opacity: 1;
-}
+  }
 
-.feature-nav li:nth-child(1):hover .nav-line {
-    background-color: #FF854D;
-}
-
-.feature-nav li:nth-child(2):hover .nav-line {
-    background-color: #FE68A4;
-}
-
-.feature-nav li:nth-child(3):hover .nav-line {
-    background-color: #C8A333;
-}
-
-.feature-nav li:nth-child(4):hover .nav-line {
-    background-color: #85CD66;
-}
-
-.feature-nav li.active:nth-child(1) {
+  /* Active 상태 텍스트 색상 */
+  .feature-nav li.active:nth-child(1) {
     color: #FF854D;
     opacity: 1;
-}
-
-.feature-nav li.active:nth-child(2) {
+  }
+  .feature-nav li.active:nth-child(2) {
     color: #FE68A4;
     opacity: 1;
-}
-
-.feature-nav li.active:nth-child(3) {
+  }
+  .feature-nav li.active:nth-child(3) {
     color: #C8A333;
     opacity: 1;
-}
-
-.feature-nav li.active:nth-child(4) {
+  }
+  .feature-nav li.active:nth-child(4) {
     color: #85CD66;
     opacity: 1;
-}
+  }
 
-.feature-nav li .nav-line {
+  /* 기본 nav-line은 숨김 */
+  .feature-nav li .nav-line {
     display: none;
-    width: 0;
-}
+  }
 
-.feature-nav li.active .nav-line {
+  /* Active 상태에서는 nav-line이 14×14 원으로 표시되고, 좌측 여백 26px 적용 */
+  .feature-nav li.active .nav-line {
     display: block;
-    animation: lineGrow 0.4s ease forwards;
-}
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-left: 26px; /* 좌측 26px 여백 */
+    margin-right: 8px; /* 아이콘과 텍스트 사이 여백 (원하는 값으로 조정) */
+  }
 
-@keyframes lineGrow {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 37px;
-    }
-}
-
-.feature-nav li.active:nth-child(1) .nav-line {
-    display: block;
+  /* 각 항목에 따른 아이콘 색상 */
+  .feature-nav li.active:nth-child(1) .nav-line {
     background-color: #FF854D;
-}
-
-.feature-nav li.active:nth-child(2) .nav-line {
-    display: block;
+  }
+  .feature-nav li.active:nth-child(2) .nav-line {
     background-color: #FE68A4;
-}
-
-.feature-nav li.active:nth-child(3) .nav-line {
-    display: block;
+  }
+  .feature-nav li.active:nth-child(3) .nav-line {
     background-color: #C8A333;
-}
-
-.feature-nav li.active:nth-child(4) .nav-line {
-    display: block;
+  }
+  .feature-nav li.active:nth-child(4) .nav-line {
     background-color: #85CD66;
-}
-.toggle-arrow {
-  transition: transform 0.3s ease;
-}
+  }
+
+  /* (옵션) hover 시에도 nav-line 색상을 동일하게 표현 */
+  .feature-nav li:nth-child(1):hover .nav-line {
+    background-color: #FF854D;
+  }
+  .feature-nav li:nth-child(2):hover .nav-line {
+    background-color: #FE68A4;
+  }
+  .feature-nav li:nth-child(3):hover .nav-line {
+    background-color: #C8A333;
+  }
+  .feature-nav li:nth-child(4):hover .nav-line {
+    background-color: #85CD66;
+  }
