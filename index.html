@@ -905,6 +905,7 @@
 
             // 활성화된 feature 메뉴 업데이트 함수
             function updateActiveFeatureMenu(scrollPos) {
+                if (asideLocked) return; // asideLocked가 true인 경우 패스
                 var features = [
                     { id: '#feature1', menuItem: $('aside li[data-feature="1"]') },
                     { id: '#feature2', menuItem: $('aside li[data-feature="2"]') },

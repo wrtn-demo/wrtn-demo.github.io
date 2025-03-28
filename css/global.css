@@ -101,22 +101,26 @@ header.scrolled {
     opacity: 1;
   }
 
-  /* 기본 nav-line은 숨김 */
+  /* 기본 nav-line: 항상 요소는 존재하지만 보이지 않음 */
   .feature-nav li .nav-line {
-    display: none;
-  }
-
-  /* Active 상태에서는 nav-line이 14×14 원으로 표시되고, 좌측 여백 26px 적용 */
-  .feature-nav li.active .nav-line {
-    display: block;
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    margin-left: 26px; /* 좌측 26px 여백 */
-    margin-right: 8px; /* 아이콘과 텍스트 사이 여백 (원하는 값으로 조정) */
+    opacity: 0;
+    transform: scale(0.5);
+    margin-left: 0;
+    margin-right: 8px; /* 텍스트와의 간격 */
+    transition: 0.3s;
   }
 
-  /* 각 항목에 따른 아이콘 색상 */
+  /* Active 상태: nav-line이 부드럽게 나타나고 좌측 여백 적용 */
+  .feature-nav li.active .nav-line {
+    opacity: 1;
+    transform: scale(1);
+    margin-left: 56px;
+  }
+
+  /* 각 항목별 nav-line 색상 */
   .feature-nav li.active:nth-child(1) .nav-line {
     background-color: #FF854D;
   }
@@ -130,7 +134,7 @@ header.scrolled {
     background-color: #85CD66;
   }
 
-  /* (옵션) hover 시에도 nav-line 색상을 동일하게 표현 */
+  /* (선택사항) hover 시에도 nav-line 색상을 미리 지정 */
   .feature-nav li:nth-child(1):hover .nav-line {
     background-color: #FF854D;
   }
