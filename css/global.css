@@ -161,3 +161,6 @@ header.scrolled {
     display: block;
     background-color: #85CD66;
 }
+.toggle-arrow {
+  transition: transform 0.3s ease;
+}
