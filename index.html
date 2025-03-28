@@ -92,7 +92,7 @@
                         <div class="w-[45%] text-[#CACACA] opacity-90 text-[24px] font-semibold">
                             최고 성능의 모델
                         </div>
-                        <div class="w-[40%] text-[#646464] text-[16px] leading-[150%]">
+                        <div class="w-[40%] text-[#646464] text-[16px] leading-[150%] font-semibold">
                             최신 AI 모델(GPT-4o, GPT-4.5, o1, Claude 3.7, Gemini 2)을 알아서 알맞게 사용해요.
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                                 <img src="img/ui4.png" alt="ui4" class="w-full h-full object-cover">
                             </div>
                             <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold mt-[20px]">최고 성능의 모델</p>
-                            <p class="mt-[17px] text-[#646464] text-[16px] leading-[150%]">인터넷 검색이 필요할 때와 아닐 때를<br
+                            <p class="mt-[17px] text-[#646464] text-[16px] leading-[150%] font-semibold">인터넷 검색이 필요할 때와 아닐 때를<br
                                     class="hidden sm:block">자동으로 구분하여 최적의 답변을 제공해요.</p>
                         </div>
                     </div>
@@ -947,6 +947,7 @@
 
                 $('html, body').animate({ scrollTop: targetOffset }, 500, function () {
                     asideLocked = false;
+                    $(window).trigger('scroll');
                 });
             });
 
