@@ -14,7 +14,7 @@
 </head>
 
 <body class="overflow-x-hidden font-pretendard">
-    <header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between" style="height: 70px;">
+    <header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between" style="height: 70px;z-index: 100;">
         <div class="mx-auto w-[1440px] px-[100px] flex items-center justify-between">
             <div class="flex items-center">
                 <img src="/img/logo.png" alt="Wrtn Logo" class="w-[51px] h-auto" id="header-logo">
@@ -733,6 +733,10 @@
                     }
                 }
             }
+            // 로고 클릭 시 홈으로 이동하는 이벤트 핸들러
+            $('#header-logo').on('click', function() {
+                window.location.href = '/';
+            });
 
             // 헤더 스타일 업데이트 함수
             function updateHeaderStyle(isMinSize) {
