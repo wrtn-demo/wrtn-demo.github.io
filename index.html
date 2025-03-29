@@ -134,7 +134,7 @@
             </div>
         </section>
         <section id="sectionGroup" class="w-full bg-[#F8F8F8]">
-            <div id="section4" class="bg-no-repeat bg-cover bg-center pt-[190px] pb-[132px]"
+            <div id="section4" class="bg-no-repeat bg-cover bg-center pt-[190px] pb-[132px] bg-[#F8F8F8]"
                 style="background-image: url('img/bg3.png');">
                 <div class="mx-auto relative w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
@@ -200,7 +200,7 @@
                 </div>
             </div>
 
-            <div id="section5" class="px-[100px] pt-[30px] pb-[220px] bg-[#F8F8F8]">
+            <div id="section5" class="px-[100px] pt-[30px] pb-[220px]">
                 <div class="mx-auto relative w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
                     <div class="w-[70%] reveal-section">
@@ -257,11 +257,11 @@
                 </div>
             </div>
 
-            <div id="section6" class="px-[100px] pt-[190px] pb-[180px] bg-[#151515]">
+            <div id="section6" class="px-[100px] pt-[190px] pb-[180px]">
                 <div class="mx-auto relative w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
-                    <div class="w-[70%] reveal-section">
-                        <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px]">뤼튼 특징 04</p>
+                    <div id="feature4Wrapper" class="w-[70%] opacity-0">
+                        <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">뤼튼 특징 04</p>
                         <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
                             style="background: linear-gradient(90deg, #F8F9FB 0%, #D0FFBA 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             업무의 처음부터 끝까지</p>
@@ -774,7 +774,7 @@
                 // 2. 특정 섹션에서 테마 반전
                 var section3Top = $('#section3').offset().top;
                 var section3Bottom = section3Top + $('#section3').outerHeight();
-                var section6Top = $('#section6').offset().top;
+                var section6Top = $('#section6').offset().top - 200;
                 var section6Bottom = section6Top + $('#section6').outerHeight();
                 var banner1Top = $('#banner1').offset().top;
                 var banner1Bottom = banner1Top + $('#banner1').outerHeight();
@@ -873,21 +873,23 @@
                     }
                 });
                 updateHeaderStyleCombined(scrollPos);
-                // var section6Top = $('#section6').offset().top;
-                // var section6Bottom = section6Top + $('#section6').outerHeight();
-                // var windowCenter = scrollPos + window.innerHeight / 2;
-                // if (windowCenter >= section6Top && windowCenter < section6Bottom) {
-                //     if (!$("#sectionGroup").hasClass("section6-active")) {
-                //         $("#sectionGroup").addClass("section6-active");
-                //         gsap.to("#sectionGroup", { backgroundColor: "#151515", duration: 0.5 });
-                //     }
-                // } else {
-                //     if ($("#sectionGroup").hasClass("section6-active")) {
-                //         $("#sectionGroup").removeClass("section6-active");
-                //         // 원래 배경색이 "#F8F8F8"라고 가정 (필요에 따라 수정)
-                //         gsap.to("#sectionGroup", { backgroundColor: "#F8F8F8", duration: 0.5 });
-                //     }
-                // }
+                var section6Top = $('#section6').offset().top - 280;
+                
+                // 특징4 위치를 기준으로 판단
+                if (scrollPos >= section6Top) {
+                    if (!$("#sectionGroup").hasClass("section6-active")) {
+                        $("#sectionGroup").addClass("section6-active");
+                        gsap.to("#sectionGroup", { backgroundColor: "#151515", duration: 0.5 });
+                        gsap.to("#feature4Wrapper", { opacity: 1, duration: 0.5 });
+                    }
+                } else {
+                    if ($("#sectionGroup").hasClass("section6-active")) {
+                        $("#sectionGroup").removeClass("section6-active");
+                        // 원래 배경색이 "#F8F8F8"라고 가정 (필요에 따라 수정)
+                        gsap.to("#sectionGroup", { backgroundColor: "#F8F8F8", duration: 0.5 });
+                        gsap.to("#feature4Wrapper", { opacity: 0, duration: 0.5 });
+                    }
+                }
             });
             // Aside 스크롤 동작 및 active 클래스 업데이트
             function updateAside() {
