@@ -960,6 +960,9 @@
   .text-\[224px\] {
     font-size: 224px;
   }
+  .text-\[240px\] {
+    font-size: 240px;
+  }
   .leading-\[24px\] {
     --tw-leading: 24px;
     line-height: 24px;
@@ -1089,6 +1092,9 @@
   }
   .opacity-90 {
     opacity: 90%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .backdrop-filter {
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
