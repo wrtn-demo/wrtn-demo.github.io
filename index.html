@@ -61,7 +61,7 @@
 
 <body class="overflow-x-hidden font-pretendard">
     <header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between" style="height: 70px;z-index: 100;">
-        <div class="mx-auto w-[1440px] px-[100px] flex items-center justify-between">
+        <div class="mx-auto w-[1440px] px-[16px] md:px-[100px] flex items-center justify-between">
             <div class="flex items-center">
                 <img src="/img/logo.png" alt="Wrtn Logo" class="w-[51px] h-auto" id="header-logo">
             </div>
@@ -72,7 +72,7 @@
             </div>
         </div>
     </header>
-    <aside class="absolute top-[100vh] z-[1]" style="left: calc((100% - 1440px)/2 + 100px);">
+    <aside class="hidden md:block absolute top-[100vh] z-[1]" style="left: calc((100% - 1440px)/2 + 100px);">
         <nav class="text-white feature-nav">
             <ul class="space-y-[8px] text-[#898989] font-[16px]">
                 <li class="font-semibold flex items-center active" data-feature="1">
@@ -92,14 +92,18 @@
     </aside>
     <main class="min-h-screen">
         <section id="section1"
-            class="relative w-full h-[100vh] flex flex-col items-center justify-center text-center gap-[6px]"
+            class="relative w-full h-[100vh] flex flex-col items-center justify-center text-center gap-[6px] text-[40px] md:text-[60px]"
             style="z-index: 10;">
-            <div class="flex gap-4 text-group transition-opacity duration-500 h-[72px]" style="line-height: normal;">
-                <h1 class="text-[60px] font-semibold text-white fade-up" id="text1">뤼튼 2.0은</h1>
-                <h1 class="text-[60px] font-semibold text-white fade-up" id="text2">뭐가</h1>
-                <h1 class="text-[60px] font-semibold text-white fade-up" id="text3">달라졌을까?</h1>
+            <div class="hidden md:flex gap-4 text-group transition-opacity duration-500 h-[72px]" style="line-height: normal;">
+                <h1 class="font-semibold text-white fade-up" id="text1">뤼튼 2.0은</h1>
+                <h1 class="font-semibold text-white fade-up" id="text2">뭐가</h1>
+                <h1 class="font-semibold text-white fade-up" id="text3">달라졌을까?</h1>
             </div>
-            <h1 class="text-[60px] font-semibold text-white leading-[120%] fade-up" id="subText">나만의 AI 서포터<br>새로워진 뤼튼에서
+            <div class="md:hidden text-group transition-opacity duration-500 leading-[120%]">
+                <h1 class="font-semibold text-white fade-up" id="text1-mobile">뤼튼 2.0은</h1>
+                <h1 class="font-semibold text-white fade-up" id="text2-mobile">뭐가 달라졌을까?</h1>
+            </div>
+            <h1 class="font-semibold text-white leading-[120%] fade-up" id="subText">나만의 AI 서포터<br>새로워진 뤼튼에서
                 만나보세요</h1>
         </section>
 
@@ -110,7 +114,7 @@
         </div>
         <section class="min-h-[110px]"></section>
         <section id="section2"
-            class="w-[1440px] mx-auto min-h-[1152px] px-[180px] pt-[140px] pb-[100px] bg-cover bg-center bg-no-repeat"
+            class="max-w-[1440px] mx-auto min-h-[1152px] px-[180px] pt-[140px] pb-[100px] bg-cover bg-center bg-no-repeat"
             style="background-image: url('img/bg2.png'); opacity: 0;">
             <div class="flex flex-col items-center justify-between font-semibold">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
@@ -123,7 +127,7 @@
             </div>
         </section>
         <section id="section3" class="w-full bg-[#151515] pt-[190px] pb-[260px]">
-            <div class="mx-auto relative w-[1440px] flex px-[100px]">
+            <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
                 <div class="w-[30%] pr-[30px]"></div>
                 <div class="w-[70%] reveal-section">
                     <p id="feature1" class="text-[#FF854D] text-[16px] font-semibold mb-[16px]">뤼튼 특징 01</p>
@@ -168,7 +172,7 @@
         <section id="banner1" class="w-full relative h-[560px] bg-cover bg-center bg-no-repeat"
             style="background-image: url('img/banner1.png');">
             <div
-                class="relative w-[1440px] mx-auto flex flex-col items-start justify-center h-full px-[100px] reveal-section">
+                class="relative max-w-[1440px] mx-auto flex flex-col items-start justify-center h-full px-[100px] reveal-section">
                 <p class="text-[#F8F9FB] text-[34px] font-semibold leading-[140%] mb-[20px]">
                     더 정교한 문맥 이해와 자연스러운 문장 구성이<br>
                     가능하도록 AI 모델이 업그레이드되었습니다.<br>
@@ -183,7 +187,7 @@
         <section id="sectionGroup" class="w-full bg-[#F8F8F8]">
             <div id="section4" class="bg-no-repeat bg-cover bg-center pt-[190px] pb-[132px] bg-[#F8F8F8]"
                 style="background-image: url('img/bg3.png');">
-                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
                     <div class="w-[70%] reveal-section">
                         <p id="feature2" class="text-[#FE68A4] text-[16px] font-semibold mb-[16px]">뤼튼 특징 02</p>
@@ -248,7 +252,7 @@
             </div>
 
             <div id="section5" class="px-[100px] pt-[30px] pb-[220px]">
-                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
                     <div class="w-[70%] reveal-section">
                         <p id="feature3" class="text-[#C8A333] text-[16px] font-semibold mb-[16px]">뤼튼 특징 03</p>
@@ -302,7 +306,7 @@
             </div>
 
             <div id="section6" class="px-[100px] pt-[190px] pb-[180px]">
-                <div class="mx-auto relative w-[1440px] flex px-[100px]">
+                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
                     <div id="feature4Wrapper" class="w-[70%] scheme-light">
                         <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">뤼튼 특징 04
@@ -371,7 +375,7 @@
                 </div>
             </div>
         </section>
-        <section id="section7" class="w-[1440px] mx-auto px-[100px] pt-[150px] pb-[165px] bg-white">
+        <section id="section7" class="max-w-[1440px] mx-auto px-[100px] pt-[150px] pb-[165px] bg-white">
             <div class="flex flex-col items-center justify-center reveal-section">
                 <p class="text-center text-[16px] font-semibold leading-[140%] tracking-[-0.32px] inline-block"
                     style="background: linear-gradient(90deg, #EE2D27 0%, #CE4FA8 44%, #5423D0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
@@ -415,7 +419,7 @@
             </div>
         </section>
         <section id="section9" class="w-full py-[120px] px-[100px]">
-            <div class="mx-auto w-[1440px] flex">
+            <div class="mx-auto max-w-[1440px] flex">
                 <div class="w-[30%] text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px]">
                     자주 묻는 질문
                 </div>
@@ -668,7 +672,7 @@
         </section>
     </main>
     <footer class="w-full bg-[#151515]">
-        <div class="mx-auto w-[1440px] px-[100px] py-[60px] flex justify-between items-start">
+        <div class="mx-auto max-w-[1440px] px-[100px] py-[60px] flex justify-between items-start">
             <!-- Column 1: Logo -->
             <div>
                 <p class="text-[#D2D2D2] text-[28px] font-semibold">뤼튼</p>
@@ -1019,12 +1023,13 @@
             // 텍스트 애니메이션 함수
             function animateTexts() {
                 $('#text1').addClass('animate-fade-up');
-
                 setTimeout(function () {
                     $('#text2').addClass('animate-fade-up');
-
+                    $('#text1-mobile').addClass('animate-fade-up');
+                    
                     setTimeout(function () {
                         $('#text3').addClass('animate-fade-up');
+                        $('#text2-mobile').addClass('animate-fade-up');
 
                         setTimeout(function () {
                             $('.text-group').css('opacity', '0.5');
