@@ -12,6 +12,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <style>
+        #feature4Wrapper {
+            transition: 0.5s ease-in-out;
+        }
+
+        .scheme-light .gradient-text {
+            background: linear-gradient(90deg, #353A40 0%, #78B65B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scheme-dark .gradient-text {
+            background: linear-gradient(90deg, #F8F9FB 0%, #D0FFBA 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scheme-light .card {
+            border-color: #D3D3D3;
+        }
+
+        .scheme-light .card-title {
+            color: #353A40;
+        }
+
+        .scheme-light .card-subtitle {
+            color: #646464;
+        }
+        
+        .scheme-dark .card {
+            border-color: #2E2E2E;
+        }
+
+        .scheme-dark .card-title {
+            color: #CACACA;
+        }
+
+        .scheme-dark .card-subtitle {
+            color: #646464;
+        }
+
+        
+    </style>
 </head>
 
 <body class="overflow-x-hidden font-pretendard">
@@ -102,17 +147,19 @@
                             <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
                                 <img src="img/ui3.png" alt="ui3" class="w-full h-full object-cover">
                             </div>
-                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">전문적인 업무</p>
-                            <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">문서와 이미지를 분석하거나, 복잡한 업무 및<br
-                                    class="hidden sm:block">과제 요청도 전문적으로 수행해요.</p>
+                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">전문적인 업무
+                            </p>
+                            <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">문서와 이미지를 분석하거나,
+                                복잡한 업무 및<br class="hidden sm:block">과제 요청도 전문적으로 수행해요.</p>
                         </div>
                         <div class="w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold">
                             <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
                                 <img src="img/ui4.png" alt="ui4" class="w-full h-full object-cover">
                             </div>
-                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">최고 성능의 모델</p>
-                            <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">인터넷 검색이 필요할 때와 아닐 때를<br
-                                    class="hidden sm:block">자동으로 구분하여 최적의 답변을 제공해요.</p>
+                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">최고 성능의 모델
+                            </p>
+                            <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">인터넷 검색이 필요할 때와
+                                아닐 때를<br class="hidden sm:block">자동으로 구분하여 최적의 답변을 제공해요.</p>
                         </div>
                     </div>
                 </div>
@@ -257,10 +304,10 @@
             <div id="section6" class="px-[100px] pt-[190px] pb-[180px]">
                 <div class="mx-auto relative w-[1440px] flex px-[100px]">
                     <div class="w-[30%] pr-[30px]"></div>
-                    <div id="feature4Wrapper" class="w-[70%] opacity-0">
-                        <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">뤼튼 특징 04</p>
-                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
-                            style="background: linear-gradient(90deg, #F8F9FB 0%, #D0FFBA 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                    <div id="feature4Wrapper" class="w-[70%] scheme-light">
+                        <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">뤼튼 특징 04
+                        </p>
+                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px] gradient-text">
                             업무의 처음부터 끝까지</p>
 
                         <p class="text-[16px] text-[#898989] leading-[140%] font-semibold mb-[80px]">업무와 과제에 특화된
@@ -268,53 +315,53 @@
                             변함없이 무제한 무료로 사용할 수 있어요.
                         </p>
                         <div class="grid grid-cols-2 w-full gap-[20px]">
-                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                            <div class="flex flex-col p-[20px] border-[1px] card rounded-[16px]">
                                 <p
-                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
                                     AI 탐지 방어</p>
                                 <p
-                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     AI가 감지하지 못하도록<br>
                                     자연스러운 말투 교정</p>
-                                <img src="img/img4-1.png" class="mt-[90px]">
+                                <img src="img/img4-1-w.png" class="mt-[90px] dynamic-image" data-light="img/img4-1-w.png" data-dark="img/img4-1.png">
                             </div>
-                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                            <div class="card flex flex-col p-[20px] border-[1px] rounded-[16px]">
                                 <p
-                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
                                     블로그</p>
                                 <p
-                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     고품질의 블로그 포스팅을<br>
                                     자동으로 완성</p>
-                                <img src="img/img4-2.png" class="mt-[90px]">
+                                <img src="img/img4-2-w.png" class="mt-[90px] dynamic-image" data-light="img/img4-2-w.png" data-dark="img/img4-2.png">
                             </div>
-                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                            <div class="card flex flex-col p-[20px] border-[1px] rounded-[16px]">
                                 <p
-                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
                                     AI 완벽 요약</p>
                                 <p
-                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     유튜브 영상, 웹사이트, 문서 등<br>
                                     긴 글을 완벽하게 요약</p>
                                 <img src="img/img4-3.png" class="mt-[90px]">
                             </div>
-                            <div class="flex flex-col p-[20px] border-[1px] border-[#2E2E2E] rounded-[16px]">
+                            <div class="card flex flex-col p-[20px] border-[1px] rounded-[16px]">
                                 <p
-                                    class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
+                                    class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
                                     서포터와 함께 사용</p>
                                 <p
-                                    class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
+                                    class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     결과물을 서포터와 함께<br>
                                     편집할 수 있어요</p>
                                 <img src="img/img4-4.png" class="mt-[90px]">
                             </div>
                         </div>
-                        <div class="border-[1px] border-[#2E2E2E] rounded-[16px] mt-[20px]">
+                        <div class="card border-[1px] rounded-[16px] mt-[20px]">
                             <p
-                                class="text-[#CACACA] text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px] pt-[20px] px-[20px]">
+                                class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px] pt-[20px] px-[20px]">
                                 20개 이상의 다양한 도구</p>
                             <p
-                                class="text-[#646464] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px] px-[20px]">
+                                class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px] px-[20px]">
                                 유튜브 영상, 웹사이트, 문서 등<br>
                                 긴 글을 완벽하게 요약
                             </p>
@@ -357,8 +404,7 @@
                     class="absolute top-0 left-0 w-full h-full object-cover"></video>
             </div>
             <div class="w-full h-full flex items-center justify-center relative flex-col">
-                <div id="countdown"
-                    class="text-black text-center count-font text-[240px] font-normal leading-[90%]"
+                <div id="countdown" class="text-black text-center count-font text-[240px] font-normal leading-[90%]"
                     style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #D0D0D0;">
                     96:54:32:01
                 </div>
@@ -739,7 +785,7 @@
                 }
             }
             // 로고 클릭 시 홈으로 이동하는 이벤트 핸들러
-            $('#header-logo').on('click', function() {
+            $('#header-logo').on('click', function () {
                 window.location.href = '/';
             });
 
@@ -871,20 +917,28 @@
                 });
                 updateHeaderStyleCombined(scrollPos);
                 var section6Top = $('#section6').offset().top - 280;
-                
+
                 // 특징4 위치를 기준으로 판단
                 if (scrollPos >= section6Top) {
                     if (!$("#sectionGroup").hasClass("section6-active")) {
                         $("#sectionGroup").addClass("section6-active");
                         gsap.to("#sectionGroup", { backgroundColor: "#151515", duration: 0.5 });
-                        gsap.to("#feature4Wrapper", { opacity: 1, duration: 0.5 });
+                        $("#feature4Wrapper").removeClass("scheme-light").addClass("scheme-dark");
+                        $(".dynamic-image").each(function() {
+                            var darkSrc = $(this).data("dark");
+                            $(this).attr("src", darkSrc);
+                        });
                     }
                 } else {
                     if ($("#sectionGroup").hasClass("section6-active")) {
                         $("#sectionGroup").removeClass("section6-active");
                         // 원래 배경색이 "#F8F8F8"라고 가정 (필요에 따라 수정)
                         gsap.to("#sectionGroup", { backgroundColor: "#F8F8F8", duration: 0.5 });
-                        gsap.to("#feature4Wrapper", { opacity: 0, duration: 0.5 });
+                        $("#feature4Wrapper").removeClass("scheme-dark").addClass("scheme-light");
+                        $(".dynamic-image").each(function() {
+                            var lightSrc = $(this).data("light");
+                            $(this).attr("src", lightSrc);
+                        });
                     }
                 }
             });
