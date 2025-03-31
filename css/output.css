@@ -269,6 +269,9 @@
   .mt-\[8px\] {
     margin-top: 8px;
   }
+  .mt-\[10px\] {
+    margin-top: 10px;
+  }
   .mt-\[12px\] {
     margin-top: 12px;
   }
@@ -860,8 +863,20 @@
   .pt-\[150px\] {
     padding-top: 150px;
   }
+  .pt-\[170px\] {
+    padding-top: 170px;
+  }
+  .pt-\[180px\] {
+    padding-top: 180px;
+  }
+  .pt-\[187px\] {
+    padding-top: 187px;
+  }
   .pt-\[190px\] {
     padding-top: 190px;
+  }
+  .pt-\[207px\] {
+    padding-top: 207px;
   }
   .pr-\[30\%\] {
     padding-right: 30%;
@@ -966,6 +981,10 @@
   .leading-\[24px\] {
     --tw-leading: 24px;
     line-height: 24px;
+  }
+  .leading-\[90\%\] {
+    --tw-leading: 90%;
+    line-height: 90%;
   }
   .leading-\[120\%\] {
     --tw-leading: 120%;

@@ -217,7 +217,6 @@
                             <!-- CARD -->
                             <div class="flex justify-between items-center">
                                 <div class="flex flex-col">
-                                    <img src="img/savings.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         뤼튼을 쓰기만해도<br>주는 캐시</p>
@@ -229,7 +228,6 @@
                             <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
                             <div class="flex justify-between items-center">
                                 <div class="flex flex-col">
-                                    <img src="img/ads_click.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         가장 쉬운<br>앱테크 미션</p>
@@ -242,7 +240,6 @@
                             <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
                             <div class="flex justify-between items-center">
                                 <div class="flex flex-col">
-                                    <img src="img/money_bag.png" alt="ui6" class="w-[38px] h-auto mb-[4px]">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         모은 캐시를 스토어에서<br>현금처럼 사용</p>
@@ -359,14 +356,14 @@
                 <video src="video/countdown.mp4" autoplay muted loop playsinline
                     class="absolute top-0 left-0 w-full h-full object-cover"></video>
             </div>
-            <div class="pt-[148px] w-full flex items-center justify-center relative flex-col">
+            <div class="w-full h-full flex items-center justify-center relative flex-col">
                 <div id="countdown"
-                    class="text-black text-center count-font text-[240px] font-normal leading-[140%]"
+                    class="text-black text-center count-font text-[240px] font-normal leading-[90%]"
                     style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #D0D0D0;">
                     96:54:32:01
                 </div>
                 <p
-                    class="text-[#E1E3E5] text-center text-[34px] font-semibold leading-[140%] tracking-[-0.68px] mt-[40px]">
+                    class="text-[#E1E3E5] text-center text-[34px] font-semibold leading-[140%] tracking-[-0.68px] mt-[10px]">
                     완전히 새로워지는 뤼튼, 곧 만나요!</p>
                 <p class="text-[#958A85] text-center text-[28px] font-semibold leading-[140%] mt-[8px]">2025.4.28</p>
             </div>
@@ -701,7 +698,7 @@
                 var ui1Height = ui1Image.height();
                 var ui1Offset = $(window).height() + 558;
                 var windowHeight = $(window).height();
-                var offset = -84;
+                var offset = -26;
                 var result = ui1Offset + (ui1Height / 2) - (windowHeight / 2) - (minRadius * 2) + offset;
                 return result;
             }
