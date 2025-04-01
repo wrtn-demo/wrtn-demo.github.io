@@ -42,7 +42,7 @@
         .scheme-light .card-subtitle {
             color: #646464;
         }
-        
+
         .scheme-dark .card {
             border-color: #2E2E2E;
         }
@@ -54,8 +54,6 @@
         .scheme-dark .card-subtitle {
             color: #646464;
         }
-
-        
     </style>
 </head>
 
@@ -94,7 +92,8 @@
         <section id="section1"
             class="relative w-full h-[100vh] flex flex-col items-center justify-center text-center gap-[6px] text-[40px] md:text-[60px]"
             style="z-index: 10;">
-            <div class="hidden md:flex gap-4 text-group transition-opacity duration-500 h-[72px]" style="line-height: normal;">
+            <div class="hidden md:flex gap-4 text-group transition-opacity duration-500 h-[72px]"
+                style="line-height: normal;">
                 <h1 class="font-semibold text-white fade-up" id="text1">뤼튼 2.0은</h1>
                 <h1 class="font-semibold text-white fade-up" id="text2">뭐가</h1>
                 <h1 class="font-semibold text-white fade-up" id="text3">달라졌을까?</h1>
@@ -114,41 +113,45 @@
         </div>
         <section class="min-h-[110px]"></section>
         <section id="section2"
-            class="max-w-[1440px] mx-auto min-h-[1152px] px-[180px] pt-[140px] pb-[100px] bg-cover bg-center bg-no-repeat"
+            class="max-w-[1440px] mx-auto md:min-h-[1152px] px-[40px] md:px-[180px] pt-[140px] pb-[100px] bg-cover bg-center bg-no-repeat"
             style="background-image: url('img/bg2.png'); opacity: 0;">
             <div class="flex flex-col items-center justify-between font-semibold">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
-                <p class="text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px]">뤼튼의 모든 기능이<br>나를 위한 단 하나의
+                <p class="text-[36px] md:text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px]">뤼튼의 모든
+                    기능이<br>나를 위한 단 하나의
                     서포터로 통합됩니다</p>
                 <p class="text-[16px] text-[#858E95] leading-[150%] text-center mb-[50px]">더 정교한 문맥 이해와 자연스러운 문장 구성이
-                    가능하도록 AI 모델이 업그레이드되었습니다.<br>
+                    가능하도록 AI 모델이 업그레이드되었습니다.<br class="hidden md:block">
                     이를 통해 보다 창의적이고 목적에 맞는 콘텐츠 생성이 가능해졌습니다.</p>
                 <img src="img/ui1.png" alt="new-wrtn" class="w-[1074px] h-auto">
             </div>
         </section>
-        <section id="section3" class="w-full bg-[#151515] pt-[190px] pb-[260px]">
-            <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
-                <div class="w-[30%] pr-[30px]"></div>
-                <div class="w-[70%] reveal-section">
+        <section id="section3" class="w-full bg-[#151515] pt-[150px] md:pt-[190px] pb-[175px] md:pb-[260px]">
+            <div class="mx-auto relative max-w-[1440px] flex px-[30px] md:px-[100px]">
+                <div class="hidden md:block w-[30%] pr-[30px]"></div>
+                <div class="w-full md:w-[70%] reveal-section">
                     <p id="feature1" class="text-[#FF854D] text-[16px] font-semibold mb-[16px]">뤼튼 특징 01</p>
-                    <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                    <p class="inline-block text-[40px] md:text-[44px] font-bold leading-[120%] mb-[40px] md:mb-[30px]"
                         style="background: linear-gradient(to right, rgba(248, 249, 251, 1), rgba(216, 183, 147, 1)); -webkit-background-clip: text; background-clip: text; color: transparent;">
-                        강력한<br>성능 업그레이드</p>
+                        강력한 <br>성능 업그레이드</p>
                     <p class="text-[16px] text-[#898989] leading-[140%] mb-[80px] font-semibold">목적 선택이나 고민 없이<br>최고의
                         한국어 성능을 만나보세요.
                     </p>
-                    <img src="img/ui2.png" alt="ui2" class="w-full h-auto rounded-[16px]">
-                    <div class="mt-[20px] flex items-start">
-                        <div class="w-[45%] text-[#CACACA] opacity-90 text-[24px] font-semibold">
+                    <img src="img/ui2.png" alt="ui2" class="w-full h-auto rounded-[12px] md:rounded-[16px]">
+                    <div class="mt-[20px] flex flex-col md:flex-row items-start">
+                        <div
+                            class="w-full md:w-[45%] text-[#CACACA] opacity-90 text-[24px] font-semibold mb-[12px] md:mb-0">
                             최고 성능의 모델
                         </div>
-                        <div class="w-[40%] text-[#646464] text-[16px] leading-[150%] font-semibold">
+                        <div class="w-full md:w-[40%] text-[#646464] text-[16px] leading-[150%] font-semibold">
                             최신 AI 모델(GPT-4o, GPT-4.5, o1, Claude 3.7, Gemini 2)을 알아서 알맞게 사용해요.
                         </div>
                     </div>
-                    <div class="mt-[50px] flex items-start gap-[20px]">
-                        <div class="w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold">
-                            <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
+                    <div class="mt-[50px] flex flex-col md:flex-row items-start gap-[20px]">
+                        <div
+                            class="w-full md:w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold mb-[40px] md:mb-0">
+                            <div
+                                class="w-full md:h-[520px] bg-[#232323] rounded-[12px] md:rounded-[16px] overflow-hidden">
                                 <img src="img/ui3.png" alt="ui3" class="w-full h-full object-cover">
                             </div>
                             <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">전문적인 업무
@@ -156,11 +159,12 @@
                             <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">문서와 이미지를 분석하거나,
                                 복잡한 업무 및<br class="hidden sm:block">과제 요청도 전문적으로 수행해요.</p>
                         </div>
-                        <div class="w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold">
-                            <div class="w-full h-[520px] bg-[#232323] rounded-[16px]">
+                        <div class="w-full md:w-1/2 text-[#CACACA] opacity-90 text-[24px] font-semibold">
+                            <div
+                                class="w-full md:h-[520px] bg-[#232323] rounded-[12px] md:rounded-[16px] overflow-hidden">
                                 <img src="img/ui4.png" alt="ui4" class="w-full h-full object-cover">
                             </div>
-                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">최고 성능의 모델
+                            <p class="text-[#CACACA] opacity-90 text-[24px] font-semibold h-[36px] mt-[20px]">자동 인터넷 검색
                             </p>
                             <p class="mt-[12px] text-[#646464] text-[16px] leading-[150%] font-semibold">인터넷 검색이 필요할 때와
                                 아닐 때를<br class="hidden sm:block">자동으로 구분하여 최적의 답변을 제공해요.</p>
@@ -169,11 +173,13 @@
                 </div>
             </div>
         </section>
-        <section id="banner1" class="w-full relative h-[560px] bg-cover bg-center bg-no-repeat"
+        <section id="banner1"
+            class="w-full relative pt-[74px] pb-[216px] md:pt-0 md:pb-0 md:h-[560px] bg-cover bg-left md:bg-center bg-no-repeat"
             style="background-image: url('img/banner1.png');">
             <div
-                class="relative max-w-[1440px] mx-auto flex flex-col items-start justify-center h-full px-[100px] reveal-section">
-                <p class="text-[#F8F9FB] text-[34px] font-semibold leading-[140%] mb-[20px]">
+                class="relative max-w-[1440px] mx-auto flex flex-col items-start justify-center h-full px-[40px] md:px-[100px] reveal-section">
+                <p
+                    class="text-[#F8F9FB] text-[32px] md:text-[34px] font-semibold leading-[140%] mb-[12px] md:mb-[20px]">
                     더 정교한 문맥 이해와 자연스러운 문장 구성이<br>
                     가능하도록 AI 모델이 업그레이드되었습니다.<br>
                     이를 통해 보다 창의적이고 목적에 맞는<br>
@@ -185,13 +191,14 @@
             </div>
         </section>
         <section id="sectionGroup" class="w-full bg-[#F8F8F8]">
-            <div id="section4" class="bg-no-repeat bg-cover bg-center pt-[190px] pb-[132px] bg-[#F8F8F8]"
+            <div id="section4"
+                class="bg-no-repeat bg-cover bg-center pt-[150px] md:pt-[190px] pb-[87px] md:pb-[132px] bg-[#F8F8F8]"
                 style="background-image: url('img/bg3.png');">
-                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
-                    <div class="w-[30%] pr-[30px]"></div>
-                    <div class="w-[70%] reveal-section">
+                <div class="mx-auto relative max-w-[1440px] flex px-[30px] md:px-[100px]">
+                    <div class="hidden md:block w-[30%] pr-[30px]"></div>
+                    <div class="w-full md:w-[70%] reveal-section">
                         <p id="feature2" class="text-[#FE68A4] text-[16px] font-semibold mb-[16px]">뤼튼 특징 02</p>
-                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                        <p class="inline-block text-[40px] md:text-[44px] font-bold leading-[120%] mb-[35px] md:mb-[30px]"
                             style="background: linear-gradient(90deg, #353A40 0%, #A35165 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             나를 위한 진화</p>
                         <p class="text-[16px] text-[#50575F] leading-[140%] mb-[80px] font-semibold">사용하면 할수록 더 정확하게
@@ -200,85 +207,91 @@
                         </p>
                         <!-- CARD -->
                         <div
-                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
-                            <div class="flex flex-col justify-center ml-[36px]">
+                            class="w-full bg-white p-[12px] md:p-[24px] rounded-[16px] flex flex-col md:flex-row md:h-[320px] md:min-w-[640px] md:justify-between md:items-center mb-[20px]">
+                            <img src="img/img2-1.png" alt="ui5"
+                                class="w-full md:w-auto md:h-full rounded-[16px] order-first md:order-last mb-[20px] md:mb-0">
+                            <div class="flex flex-col justify-center md:ml-[36px] px-[20px] md:px-0">
                                 <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">이전보다<br>10배 향상된 기억력
                                 </p>
                                 <p
-                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[16px] mb-[32px] md:mb-0">
                                     오래전에 한 이야기도<br>기억하여 대화에 반영해요</p>
                             </div>
-                            <img src="img/img2-1.png" alt="ui5"
-                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
                         </div>
                         <div
-                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
-                            <div class="flex flex-col justify-center ml-[36px]">
+                            class="w-full bg-white p-[12px] md:p-[24px] rounded-[16px] flex flex-col md:flex-row md:h-[320px] md:min-w-[640px] md:justify-between md:items-center mb-[20px]">
+                            <div class="flex flex-col justify-center md:ml-[36px] px-[20px] md:px-0">
                                 <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">나만을 위한<br>맞춤형 뉴스레터
                                 </p>
                                 <p
-                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[16px] mb-[32px] md:mb-0">
                                     나의 관심사와 흥미에 맞춘 최신<br>
                                     정보를 정리해서 보내줘요</p>
                             </div>
                             <img src="img/img2-2.png" alt="ui5"
-                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                                class="w-full md:w-auto md:h-full rounded-[16px] border-[0.5px] border-[#ADB6BD] order-first md:order-last mb-[20px] md:mb-0">
                         </div>
                         <div
-                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center mb-[20px]">
-                            <div class="flex flex-col justify-center ml-[36px]">
+                            class="w-full bg-white p-[12px] md:p-[24px] rounded-[16px] flex flex-col md:flex-row md:h-[320px] md:min-w-[640px] md:justify-between md:items-center mb-[20px]">
+                            <div class="flex flex-col justify-center md:ml-[36px] px-[20px] md:px-0">
                                 <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">AI가 먼저<br>다가오는 경험</p>
                                 <p
-                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[16px] mb-[32px] md:mb-0">
                                     유용한 정보나 소식을 놓치지 않도록<br>
                                     먼저 말을 걸어줘요.</p>
                             </div>
                             <img src="img/img2-3.png" alt="ui5"
-                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                                class="w-full md:w-auto md:h-full rounded-[16px] order-first md:order-last mb-[20px] md:mb-0">
                         </div>
                         <div
-                            class="w-full h-[320px] bg-white p-[24px] rounded-[16px] flex justify-between items-center">
-                            <div class="flex flex-col justify-center ml-[36px]">
+                            class="w-full bg-white p-[12px] md:p-[24px] rounded-[16px] flex flex-col md:flex-row md:h-[320px] md:min-w-[640px] md:justify-between md:items-center">
+                            <div class="flex flex-col justify-center md:ml-[36px] px-[20px] md:px-0">
                                 <p class="text-[#353A40] text-[28px] font-semibold leading-[140%]">여전히<br>강력한 보안</p>
                                 <p
-                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-4">
+                                    class="text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[16px] mb-[32px] md:mb-0">
                                     최고 수준의 보안과 암호화로<br>안전하게 대화할 수 있어요.</p>
                             </div>
                             <img src="img/img2-4.png" alt="ui5"
-                                class="w-auto h-full rounded-[16px] border-[0.5px] border-[#ADB6BD]">
+                                class="w-full md:w-auto md:h-full rounded-[16px] order-first md:order-last mb-[20px] md:mb-0">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="section5" class="px-[100px] pt-[30px] pb-[220px]">
-                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
-                    <div class="w-[30%] pr-[30px]"></div>
-                    <div class="w-[70%] reveal-section">
+            <div id="section5" class="pt-[150px] md:pt-[30px] pb-[240px] md:pb-[220px]">
+                <div class="mx-auto relative max-w-[1440px] flex px-[30px] md:px-[100px]">
+                    <div class="hidden md:block w-[30%] pr-[30px]"></div>
+                    <div class="w-full md:w-[70%] reveal-section">
                         <p id="feature3" class="text-[#C8A333] text-[16px] font-semibold mb-[16px]">뤼튼 특징 03</p>
-                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px]"
+                        <p class="inline-block text-[40px] md:text-[44px] font-bold leading-[120%] mb-[35px] md:mb-[30px]"
                             style="background: linear-gradient(90deg, #353A40 0%, #A6956A 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             무료를 넘어 소득까지</p>
-                        <p class="text-[16px] text-[#50575F] leading-[140%] font-semibold mb-[3px]">가볍게 수행할 수 있는 앱테크
+                        <p class="text-[16px] text-[#50575F] leading-[140%] font-semibold mb-[4px] md:mb-[3px]">가볍게 수행할
+                            수 있는 앱테크
                             미션으로<br>
                             소득을 만들어보세요.
                         </p>
-                        <p class="text-[#858E95] text-[13px] leading-[150%] mb-[114px]">*성냥이 뤼튼 캐시로 변경됩니다.</p>
+                        <p class="text-[#858E95] text-[13px] leading-[150%] mb-[80px] md:mb-[114px]">*성냥이 뤼튼 캐시로 변경됩니다.
+                        </p>
                         <div class="flex flex-col">
                             <!-- CARD -->
-                            <div class="flex justify-between items-center">
-                                <div class="flex flex-col">
+                            <div
+                                class="flex flex-col md:flex-row justify-between items-center md:min-w-[640px] md:gap-[20px]">
+                                <div class="w-full flex flex-col order-last md:order-first">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         뤼튼을 쓰기만해도<br>주는 캐시</p>
                                     <p class="text-[#858E95] text-[16px] font-semibold leading-[150%]">출석체크와 서포터가 보낸
                                         뉴스레터를<br>읽기만 해도 매일 캐시를 받을 수 있어요.</p>
                                 </div>
-                                <img src="img/img3-1.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                                <img src="img/img3-1.png" alt="ui6"
+                                    class="w-full md:w-[400px] h-auto rounded-[16px] md:ml-auto mb-[20px] md:mb-0">
                             </div>
-                            <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
-                            <div class="flex justify-between items-center">
-                                <div class="flex flex-col">
+                            <div class="w-full h-[1px] bg-[#C8D1D7] mt-[86px] mb-[20px] md:mt-[15px] md:mb-[15px]">
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row justify-between items-center md:min-w-[640px] md:gap-[20px]">
+                                <div class="w-full flex flex-col order-last md:order-first">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         가장 쉬운<br>앱테크 미션</p>
@@ -286,11 +299,14 @@
                                         서비스 대비<br>
                                         쉬운 미션으로 더 많은 캐시를 모을 수 있어요.</p>
                                 </div>
-                                <img src="img/img3-3.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                                <img src="img/img3-3.png" alt="ui6"
+                                    class="w-full md:w-[400px] h-auto rounded-[16px] md:ml-auto mb-[20px] md:mb-0">
                             </div>
-                            <div class="w-full h-[1px] bg-[#C8D1D7] my-[15px]"></div>
-                            <div class="flex justify-between items-center">
-                                <div class="flex flex-col">
+                            <div class="w-full h-[1px] bg-[#C8D1D7] mt-[86px] mb-[20px] md:mt-[15px] md:mb-[15px]">
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row justify-between items-center md:min-w-[640px] md:gap-[20px]">
+                                <div class="w-full flex flex-col order-last md:order-first">
                                     <p
                                         class="text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px] mb-[20px]">
                                         모은 캐시를 스토어에서<br>현금처럼 사용</p>
@@ -298,27 +314,29 @@
                                         교환하거나<br>
                                         물건을 직접 구매할 수 있어요.</p>
                                 </div>
-                                <img src="img/img3-2.png" alt="ui6" class="w-[400px] h-auto rounded-[16px] ml-auto">
+                                <img src="img/img3-2.png" alt="ui6"
+                                    class="w-full md:w-[400px] h-auto rounded-[16px] md:ml-auto mb-[20px] md:mb-0">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="section6" class="px-[100px] pt-[190px] pb-[180px]">
-                <div class="mx-auto relative max-w-[1440px] flex px-[100px]">
-                    <div class="w-[30%] pr-[30px]"></div>
-                    <div id="feature4Wrapper" class="w-[70%] scheme-light">
+            <div id="section6" class="pt-[120px] md:pt-[190px] pb-[160px] md:pb-[180px]">
+                <div class="mx-auto relative max-w-[1440px] flex px-[30px] md:px-[100px]">
+                    <div class="hidden md:block w-[30%] pr-[30px]"></div>
+                    <div id="feature4Wrapper" class="w-full md:w-[70%] scheme-light">
                         <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">뤼튼 특징 04
                         </p>
-                        <p class="inline-block text-[44px] font-bold leading-[120%] mb-[30px] gradient-text">
+                        <p
+                            class="inline-block text-[40px] md:text-[44px] font-bold leading-[120%] mb-[35px] md:mb-[30px] gradient-text">
                             업무의 처음부터 끝까지</p>
 
                         <p class="text-[16px] text-[#898989] leading-[140%] font-semibold mb-[80px]">업무와 과제에 특화된
                             도구들은<br>
                             변함없이 무제한 무료로 사용할 수 있어요.
                         </p>
-                        <div class="grid grid-cols-2 w-full gap-[20px]">
+                        <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-[20px]">
                             <div class="flex flex-col p-[20px] border-[1px] card rounded-[16px]">
                                 <p
                                     class="card-title text-[26px] font-semibold leading-[140%] tracking-[-0.52px] mt-[12px]">
@@ -327,7 +345,8 @@
                                     class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     AI가 감지하지 못하도록<br>
                                     자연스러운 말투 교정</p>
-                                <img src="img/img4-1-w.png" class="mt-[90px] dynamic-image" data-light="img/img4-1-w.png" data-dark="img/img4-1.png">
+                                <img src="img/img4-1-w.png" class="mt-[90px] dynamic-image"
+                                    data-light="img/img4-1-w.png" data-dark="img/img4-1.png">
                             </div>
                             <div class="card flex flex-col p-[20px] border-[1px] rounded-[16px]">
                                 <p
@@ -337,7 +356,8 @@
                                     class="card-subtitle text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mt-[13px]">
                                     고품질의 블로그 포스팅을<br>
                                     자동으로 완성</p>
-                                <img src="img/img4-2-w.png" class="mt-[90px] dynamic-image" data-light="img/img4-2-w.png" data-dark="img/img4-2.png">
+                                <img src="img/img4-2-w.png" class="mt-[90px] dynamic-image"
+                                    data-light="img/img4-2-w.png" data-dark="img/img4-2.png">
                             </div>
                             <div class="card flex flex-col p-[20px] border-[1px] rounded-[16px]">
                                 <p
@@ -375,29 +395,40 @@
                 </div>
             </div>
         </section>
-        <section id="section7" class="max-w-[1440px] mx-auto px-[100px] pt-[150px] pb-[165px] bg-white">
+        <section id="section7"
+            class="max-w-[1440px] mx-auto px-[30px] md:px-[100px] pt-[150px] pb-[130px] md:pb-[165px] bg-white">
             <div class="flex flex-col items-center justify-center reveal-section">
-                <p class="text-center text-[16px] font-semibold leading-[140%] tracking-[-0.32px] inline-block"
+                <p class="text-center text-[16px] font-semibold leading-[140%] tracking-[-0.32px] inline-block mb-[8px]"
                     style="background: linear-gradient(90deg, #EE2D27 0%, #CE4FA8 44%, #5423D0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                     더 강력해진 뤼튼, 이렇게 달라집니다</p>
-                <p class="text-[#353A40] text-center text-[44px] font-semibold leading-[140%] tracking-[-0.88px]">한 눈에
-                    보는 새로운 뤼튼</p>
+                <p
+                    class="text-[#353A40] text-center text-[40px] md:text-[44px] font-semibold leading-[140%] tracking-[-0.88px]">
+                    한 눈에
+                    보는<br class="md:hidden"> 새로운 뤼튼</p>
                 <div class="w-full mt-[60px] flex flex-col gap-[20px]">
-                    <div class="flex gap-[20px]">
-                        <div class="flex flex-col gap-[20px]">
-                            <img src="img/bento1.png" class="w-[467px] h-[261px]">
-                            <img src="img/bento4.png" class="w-[467px] h-[253px]">
+                    <div class="hidden md:flex gap-[20px]">
+                        <div class="flex flex-col gap-[20px] w-full md:w-auto">
+                            <img src="img/bento1.png" class="w-full md:w-[467px] object-cover aspect-[467/261]">
+                            <img src="img/bento4.png" class="w-full md:w-[467px] object-cover aspect-[467/253]">
                         </div>
-                        <div class="flex flex-col gap-[20px]">
-                            <img src="img/bento2.png" class="w-[360px] h-[127px]">
-                            <img src="img/bento5.png" class="w-[360px] h-[386px]">
+                        <div class="flex flex-col gap-[20px] w-full md:w-auto">
+                            <img src="img/bento2.png" class="w-full md:w-[360px] object-cover aspect-[360/127]">
+                            <img src="img/bento5.png" class="w-full md:w-[360px] object-cover aspect-[360/386]">
                         </div>
-                        <div class="">
-                            <img src="img/bento3.png" class="w-[373px] h-[533px]">
+                        <div class="w-full md:w-auto">
+                            <img src="img/bento3.png" class="w-full md:w-[373px] object-cover aspect-[373/533]">
                         </div>
                     </div>
-                    <div>
+                    <div class="hidden md:block">
                         <img src="img/bento6.png" class="w-full h-auto">
+                    </div>
+                    <div class="flex flex-col md:hidden gap-[12px]">
+                        <img src="img/bento1.png" class="w-full object-cover aspect-[467/261]">
+                        <img src="img/bento4.png" class="w-full object-cover aspect-[467/253]">
+                        <img src="img/bento2.png" class="w-full object-cover aspect-[360/127]">
+                        <img src="img/bento5.png" class="w-full object-cover aspect-[360/386]">
+                        <img src="img/bento3.png" class="w-full object-cover aspect-[373/533]">
+                        <img src="img/bento6-2.png" class="w-full h-auto">
                     </div>
                 </div>
             </div>
@@ -408,31 +439,34 @@
                     class="absolute top-0 left-0 w-full h-full object-cover"></video>
             </div>
             <div class="w-full h-full flex items-center justify-center relative flex-col">
-                <div id="countdown" class="text-black text-center count-font text-[240px] font-normal leading-[90%]"
+                <div id="countdown"
+                    class="text-black text-center count-font text-[92px] md:text-[240px] font-normal leading-[90%]"
                     style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #D0D0D0;">
                     96:54:32:01
                 </div>
                 <p
                     class="text-[#E1E3E5] text-center text-[34px] font-semibold leading-[140%] tracking-[-0.68px] mt-[10px]">
-                    완전히 새로워지는 뤼튼, 곧 만나요!</p>
+                    완전히 새로워지는 뤼튼,<br class="md:hidden"> 곧 만나요!</p>
                 <p class="text-[#958A85] text-center text-[28px] font-semibold leading-[140%] mt-[8px]">2025.4.28</p>
             </div>
         </section>
-        <section id="section9" class="w-full py-[120px] px-[100px]">
-            <div class="mx-auto max-w-[1440px] flex">
-                <div class="w-[30%] text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px]">
+        <section id="section9" class="w-full pt-[76px] pb-[130px] md:pt-[120px] md:pb-[120px] px-[30px] md:px-[100px]">
+            <div class="mx-auto max-w-[1440px] flex flex-col md:flex-row">
+                <div
+                    class="w-[30%] text-[#ADB6BD] text-[16px] font-semibold leading-[140%] tracking-[-0.32px] mb-[23px] md:mb-0">
                     자주 묻는 질문
                 </div>
-                <div class="w-[70%] mt-[-28px]">
+                <div class="w-full md:w-[70%] mt-[-28px]">
                     <div class="accordion">
                         <!-- 1. 나만의 AI 서포터가 무엇인가요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     나만의 AI 서포터가 무엇인가요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -443,12 +477,13 @@
 
                         <!-- 2. 기존의 대화 내용은 보존되나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     기존의 대화 내용은 보존되나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -459,12 +494,13 @@
 
                         <!-- 3. 무료 서비스는 유지되나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     무료 서비스는 유지되나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -475,12 +511,13 @@
 
                         <!-- 4. 이전 버전의 뤼튼을 사용할 수는 없나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     이전 버전의 뤼튼을 사용할 수는 없나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -491,12 +528,13 @@
 
                         <!-- 5. AI 성능에 변화가 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     AI 성능에 변화가 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -507,12 +545,13 @@
 
                         <!-- 6. 회원가입을 새로 해야하나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     회원가입을 새로 해야하나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -523,12 +562,13 @@
 
                         <!-- 7. 나만의 AI는 어디서 사용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     나만의 AI는 어디서 사용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -539,12 +579,13 @@
 
                         <!-- 8. AI 검색, AI 과제와 업무, AI 이미지는 어디서 사용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     AI 검색, AI 과제와 업무, AI 이미지는 어디서 사용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -555,12 +596,13 @@
 
                         <!-- 9. 자동 완성은 어디서 사용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     자동 완성은 어디서 사용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -571,12 +613,13 @@
 
                         <!-- 10. 완벽 요약은 어디서 사용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     완벽 요약은 어디서 사용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -587,12 +630,13 @@
 
                         <!-- 11. 탐지 방어는 어디서 사용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     탐지 방어는 어디서 사용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -603,12 +647,13 @@
 
                         <!-- 12. 보유하던 성냥은 어떻게 되나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     보유하던 성냥은 어떻게 되나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -619,12 +664,13 @@
 
                         <!-- 13. 캐릭터 챗이 사라졌어요. 캐릭터 챗은 어디서 이용할 수 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     캐릭터 챗이 사라졌어요. 캐릭터 챗은 어디서 이용할 수 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -635,12 +681,13 @@
 
                         <!-- 14. 개편으로 종료되는 서비스에는 무엇이 있나요? -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     개편으로 종료되는 서비스에는 무엇이 있나요?
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -651,12 +698,13 @@
 
                         <!-- 15. Q&A에서 원하는 답변을 찾지 못했어요. -->
                         <div class="faq-item border-b-[1px] border-[#CFD4DA] cursor-pointer py-[28px]">
-                            <div class="faq-header flex items-center justify-between">
+                            <div class="faq-header flex items-start justify-between">
                                 <p
-                                    class="question text-[#353A40] text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
+                                    class="question text-[#353A40] text-[24px] md:text-[28px] font-semibold leading-[140%] tracking-[-0.56px]">
                                     Q&A에서 원하는 답변을 찾지 못했어요.
                                 </p>
-                                <img src="img/arrow_upward.png" class="w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
+                                <img src="img/arrow_upward.png"
+                                    class="ml-[20px] md:ml-[0px] w-[40px] h-auto toggle-arrow" alt="화살표 아이콘">
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px]">
@@ -672,31 +720,38 @@
         </section>
     </main>
     <footer class="w-full bg-[#151515]">
-        <div class="mx-auto max-w-[1440px] px-[100px] py-[60px] flex justify-between items-start">
-            <!-- Column 1: Logo -->
-            <div>
-                <p class="text-[#D2D2D2] text-[28px] font-semibold">뤼튼</p>
+        <div class="mx-auto max-w-[1440px] px-[30px] md:px-[100px] py-[60px]">
+            <div class="flex justify-between items-start">
+                <!-- Column 1: Logo -->
+                <div>
+                    <p class="text-[#D2D2D2] text-[28px] font-semibold">뤼튼</p>
+                </div>
+
+                <!-- Column 2: Empty space -->
+                <div></div>
+                <div></div>
+
+                <!-- Column 3: Links -->
+                <div class="flex flex-col items-start text-[16px] pb-0 md:pb-[30px]">
+                    <a target="_blank" href="https://wrtn.io"
+                        class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">wrtn.io</a>
+                    <a target="_blank" href="https://wrtn.io/blog"
+                        class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">Blog</a>
+                    <a target="_blank" href="https://instagram.com/wrtn.ai"
+                        class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">Instagram</a>
+                </div>
+
+                <!-- Column 4: Copyright -->
+                <div class="hidden md:flex items-end justify-end">
+                    <p class="text-[#D2D2D2] text-[14px]">© 2025 Wrtn</p>
+                </div>
             </div>
 
-            <!-- Column 2: Empty space -->
-            <div></div>
-            <div></div>
-
-            <!-- Column 3: Links -->
-            <div class="flex flex-col items-start text-[16px] pb-[30px]">
-                <a target="_blank" href="https://wrtn.io"
-                    class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">wrtn.io</a>
-                <a target="_blank" href="https://wrtn.io/blog"
-                    class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">Blog</a>
-                <a target="_blank" href="https://instagram.com/wrtn.ai"
-                    class="text-[#D2D2D2] text-[16px] hover:text-white transition-colors">Instagram</a>
-            </div>
-
-            <!-- Column 4: Copyright -->
-            <div class="flex items-end justify-end">
+            <div class="block md:hidden mt-auto pt-[8px]">
                 <p class="text-[#D2D2D2] text-[14px]">© 2025 Wrtn</p>
             </div>
         </div>
+
     </footer>
     <script>
         const lenis = new Lenis()
@@ -928,7 +983,7 @@
                         $("#sectionGroup").addClass("section6-active");
                         gsap.to("#sectionGroup", { backgroundColor: "#151515", duration: 0.5 });
                         $("#feature4Wrapper").removeClass("scheme-light").addClass("scheme-dark");
-                        $(".dynamic-image").each(function() {
+                        $(".dynamic-image").each(function () {
                             var darkSrc = $(this).data("dark");
                             $(this).attr("src", darkSrc);
                         });
@@ -939,7 +994,7 @@
                         // 원래 배경색이 "#F8F8F8"라고 가정 (필요에 따라 수정)
                         gsap.to("#sectionGroup", { backgroundColor: "#F8F8F8", duration: 0.5 });
                         $("#feature4Wrapper").removeClass("scheme-dark").addClass("scheme-light");
-                        $(".dynamic-image").each(function() {
+                        $(".dynamic-image").each(function () {
                             var lightSrc = $(this).data("light");
                             $(this).attr("src", lightSrc);
                         });
@@ -1026,7 +1081,7 @@
                 setTimeout(function () {
                     $('#text2').addClass('animate-fade-up');
                     $('#text1-mobile').addClass('animate-fade-up');
-                    
+
                     setTimeout(function () {
                         $('#text3').addClass('animate-fade-up');
                         $('#text2-mobile').addClass('animate-fade-up');

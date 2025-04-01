@@ -107,7 +107,7 @@ header.scrolled {
 
   /* 기본 nav-line: 항상 요소는 존재하지만 보이지 않음 */
   .feature-nav li .nav-line {
-    width: 14px;
+    width: 0;
     height: 14px;
     border-radius: 50%;
     opacity: 0;
@@ -119,6 +119,7 @@ header.scrolled {
 
   /* Active 상태: nav-line이 부드럽게 나타나고 좌측 여백 적용 */
   .feature-nav li.active .nav-line {
+    width: 14px;
     opacity: 1;
     transform: scale(1);
     margin-left: 56px;
