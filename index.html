@@ -915,6 +915,11 @@
 
             // 창 크기 변경 시 값 재계산
             $(window).resize(function () {
+                // 모바일에서 가로 크기가 변경되지 않으면 무시
+                var prevWidth = $(window).width();
+                if (prevWidth < 1024 && prevWidth === $(window).width()) {
+                    return;
+                }
                 // 브라우저 창의 가로와 세로 중 더 큰 값을 기준으로 반지름 재설정
                 initialRadius = Math.max($(window).width(), $(window).height()) / 1.5;
                 maxScroll = calculateMaxScroll();
