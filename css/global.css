@@ -121,7 +121,7 @@ header.scrolled {
     width: 14px;
     opacity: 1;
     transform: scale(1);
-    margin-left: 56px;
+    margin-left: 26px;
     margin-right: 8px; /* 텍스트와의 간격 */
   }
 
