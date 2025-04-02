@@ -194,6 +194,21 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-\[22px\] {
+    top: 22px;
+  }
+  .top-\[30px\] {
+    top: 30px;
+  }
+  .top-\[40px\] {
+    top: 40px;
+  }
+  .top-\[50\%\] {
+    top: 50%;
+  }
+  .top-\[60px\] {
+    top: 60px;
+  }
   .top-\[100px\] {
     top: 100px;
   }
@@ -205,6 +220,12 @@
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
+  }
+  .left-\[22px\] {
+    left: 22px;
+  }
+  .left-\[30px\] {
+    left: 30px;
   }
   .left-\[100px\] {
     left: 100px;
@@ -614,6 +635,9 @@
   .min-w-\[640px\] {
     min-width: 640px;
   }
+  .min-w-\[1200px\] {
+    min-width: 1200px;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -625,6 +649,10 @@
   }
   .basis-5\/12 {
     flex-basis: calc(5/12 * 100%);
+  }
+  .translate-y-\[-50\%\] {
+    --tw-translate-y: -50%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .rotate-0 {
     rotate: 0deg;
@@ -757,6 +785,10 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .border-\[0\.3px\] {
+    border-style: var(--tw-border-style);
+    border-width: 0.3px;
+  }
   .border-\[0\.5px\] {
     border-style: var(--tw-border-style);
     border-width: 0.5px;
@@ -775,6 +807,9 @@
   }
   .border-\[\#2E2E2E\] {
     border-color: #2E2E2E;
+  }
+  .border-\[\#535353\] {
+    border-color: #535353;
   }
   .border-\[\#ADB6BD\] {
     border-color: #ADB6BD;
@@ -877,6 +912,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-center {
+    object-position: center;
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -1082,6 +1120,9 @@
   }
   .text-\[18px\] {
     font-size: 18px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
   }
   .text-\[24px\] {
     font-size: 24px;
@@ -1310,6 +1351,14 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
+  .duration-600 {
+    --tw-duration: 600ms;
+    transition-duration: 600ms;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .hover\:translate-y-\[-5px\] {
     &:hover {
       @media (hover: hover) {
@@ -1516,6 +1565,16 @@
       height: 100%;
     }
   }
+  .md\:max-h-\[520px\] {
+    @media (width >= 48rem) {
+      max-height: 520px;
+    }
+  }
+  .md\:min-h-\[520px\] {
+    @media (width >= 48rem) {
+      min-height: 520px;
+    }
+  }
   .md\:min-h-\[1152px\] {
     @media (width >= 48rem) {
       min-height: 1152px;
@@ -1574,6 +1633,11 @@
   .md\:min-w-\[640px\] {
     @media (width >= 48rem) {
       min-width: 640px;
+    }
+  }
+  .md\:min-w-\[1200px\] {
+    @media (width >= 48rem) {
+      min-width: 1200px;
     }
   }
   .md\:grid-cols-2 {
@@ -1741,6 +1805,21 @@
       font-size: 240px;
     }
   }
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1910,21 +1989,6 @@
 @property --tw-duration {
   syntax: "*";
   inherits: false;
-}
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
 @property --tw-scale-x {
   syntax: "*";
