@@ -60,6 +60,7 @@
                 background-image: url('img/bg2_m.png');
                 background-position: center -300px;
             }
+
             aside {
                 display: none !important;
             }
@@ -69,6 +70,7 @@
             #section2 {
                 background-image: url('img/bg2.png');
             }
+
             aside {
                 display: block;
             }
@@ -135,7 +137,8 @@
             class="max-w-[1440px] mx-auto lg:min-h-[1152px] px-[40px] lg:px-[180px] pt-[140px] pb-[100px] bg-none bg-cover bg-center bg-no-repeat"
             style="opacity: 0;">
             <div class="flex flex-col items-center justify-between font-semibold">
-                <img src="img/ui1_m.png" alt="new-wrtn" class="block lg:hidden w-[260px] h-auto rounded-[16px] mb-[36px]">
+                <img src="img/ui1_m.png" alt="new-wrtn"
+                    class="block lg:hidden w-[260px] h-auto rounded-[16px] mb-[36px]">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
                 <p class="text-[36px] lg:text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px]">뤼튼의 모든
                     기능이<br>나를 위한 단 하나의
@@ -897,7 +900,7 @@
             });
 
             // 이미지가 이미 로드된 경우 최대 스크롤 계산
-            if (($(window).width() >= 1024 && $('img[src="img/ui1.png"]').complete) || 
+            if (($(window).width() >= 1024 && $('img[src="img/ui1.png"]').complete) ||
                 ($(window).width() < 1024 && $('img[src="img/ui1_m.png"]').complete)) {
                 maxScroll = calculateMaxScroll();
             }
