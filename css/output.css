@@ -1330,6 +1330,10 @@
     --tw-tracking: -0.88px;
     letter-spacing: -0.88px;
   }
+  .tracking-\[-1\.14px\] {
+    --tw-tracking: -1.14px;
+    letter-spacing: -1.14px;
+  }
   .tracking-\[-4\.48px\] {
     --tw-tracking: -4.48px;
     letter-spacing: -4.48px;
