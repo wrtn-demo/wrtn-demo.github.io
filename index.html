@@ -1030,7 +1030,7 @@
                 var uiHeight = uiImage.height();
                 var uiTop = uiImage.offset().top;
                 var uiCenter = uiTop + (uiHeight / 2);
-                var windowHeight = dynamicVhAlt;
+                var windowHeight = window.innerHeight;
                 var offset = $(window).width() >= 1024 ? 24 : 50;
                 var result = uiCenter - (windowHeight / 2) - (minRadius * 2) + offset;
                 return result;
