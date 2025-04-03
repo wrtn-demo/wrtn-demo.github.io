@@ -56,11 +56,6 @@
         }
 
         @media (max-width: 1400px) {
-            #section2 {
-                background-image: url('img/bg2_m.png');
-                background-position: center -100px;
-            }
-
             aside {
                 display: none !important;
             }
@@ -138,7 +133,7 @@
             style="opacity: 0;">
             <div class="flex flex-col items-center justify-between font-semibold">
                 <img src="img/ui1_m.png" alt="new-wrtn"
-                    class="block lg:hidden w-[260px] h-auto rounded-[16px] mb-[36px]">
+                    class="block lg:hidden min-w-[394px] w-[394px] h-auto rounded-[16px] mb-[51px]">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
                 <p class="text-[36px] lg:text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px]">뤼튼의 모든
                     기능이<br>나를 위한 단 하나의
@@ -146,7 +141,7 @@
                 <p class="text-[16px] text-[#858E95] leading-[150%] text-center mb-[50px]">더 정교한 문맥 이해와 자연스러운 문장 구성이
                     가능하도록 AI 모델이 업그레이드되었습니다.<br class="hidden lg:block">
                     이를 통해 보다 창의적이고 목적에 맞는 콘텐츠 생성이 가능해졌습니다.</p>
-                <img src="img/ui1.png" alt="new-wrtn" class="hidden lg:block min-w-[1074px] h-auto">
+                <img src="img/ui1.png" alt="new-wrtn" class="hidden lg:block min-w-[990px] h-auto">
             </div>
         </section>
         <section id="section3" class="w-full bg-[#151515] pt-[150px] lg:pt-[190px] pb-[175px] lg:pb-[260px]">
@@ -951,7 +946,8 @@
             var asideLocked = false;
             // 브라우저 창의 가로와 세로 중 더 큰 값을 기준으로 초기 반지름 설정
             var initialRadius = Math.max($(window).width(), $(window).height()) / 1.5;
-            const minRadius = 30;
+            
+            var minRadius = calculateMinRadius();
             var maxScroll;
 
             $('.faq-item').on('click', function () {
@@ -961,6 +957,9 @@
                 $(this).find('.toggle-arrow').toggleClass('rotate-90');
             });
             // 최대 스크롤 위치 계산 함수
+            function calculateMinRadius() {
+                return $(window).width() >= 1024 ? 30 : 28;
+            }
             function calculateMaxScroll() {
                 var uiImage;
                 if ($(window).width() >= 1024) { // lg 기준 (1024px)
@@ -972,31 +971,30 @@
                 var uiTop = uiImage.offset().top;
                 var uiCenter = uiTop + (uiHeight / 2);
                 var windowHeight = $(window).height();
-                var offset = $(window).width() >= 1024 ? 24 : 55;
+                var offset = $(window).width() >= 1024 ? 24 : 50;
                 var result = uiCenter - (windowHeight / 2) - (minRadius * 2) + offset;
+                console.log(result);
                 return result;
             }
 
             // 이미지 로드 시 최대 스크롤 계산
             $('img[src="img/ui1.png"], img[src="img/ui1_m.png"]').on('load', function () {
+                minRadius = calculateMinRadius();
                 maxScroll = calculateMaxScroll();
             });
 
             // 이미지가 이미 로드된 경우 최대 스크롤 계산
             if (($(window).width() >= 1024 && $('img[src="img/ui1.png"]').complete) ||
                 ($(window).width() < 1024 && $('img[src="img/ui1_m.png"]').complete)) {
+                minRadius = calculateMinRadius();
                 maxScroll = calculateMaxScroll();
             }
 
             // 창 크기 변경 시 값 재계산
             $(window).resize(function () {
-                // 모바일에서 가로 크기가 변경되지 않으면 무시
-                var prevWidth = $(window).width();
-                if (prevWidth < 1024 && prevWidth === $(window).width()) {
-                    return;
-                }
                 // 브라우저 창의 가로와 세로 중 더 큰 값을 기준으로 반지름 재설정
                 initialRadius = Math.max($(window).width(), $(window).height()) / 1.5;
+                minRadius = calculateMinRadius();
                 maxScroll = calculateMaxScroll();
                 $(window).trigger('scroll');
             });
@@ -1122,11 +1120,15 @@
                     });
                 }
 
+                // 최소 반지름 값이 없으면 계산
+                if (!minRadius) {
+                    minRadius = calculateMinRadius();
+                }
+
                 // 최대 스크롤 값이 없으면 계산
                 if (!maxScroll) {
                     maxScroll = calculateMaxScroll();
                 }
-
                 // 비디오 원형 크기 및 스타일 업데이트
                 var newRadius;
                 if (scrollPos >= maxScroll) {
