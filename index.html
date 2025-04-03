@@ -133,7 +133,7 @@
             style="opacity: 0;">
             <div class="flex flex-col items-center justify-between font-semibold">
                 <img src="img/ui1_m.png" alt="new-wrtn"
-                    class="block lg:hidden min-w-[394px] w-[394px] h-auto rounded-[16px] mb-[51px]">
+                    class="block lg:hidden min-w-[394px] w-[394px] h-auto rounded-[16px]">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
                 <p
                     class="text-[36px] lg:text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px] tracking-[-1.14px]">
@@ -143,7 +143,7 @@
                 <p class="text-[16px] text-[#858E95] leading-[150%] text-center mb-[50px]">더 정교한 문맥 이해와 자연스러운 문장 구성이
                     가능하도록 AI 모델이 업그레이드되었습니다.<br class="hidden lg:block">
                     이를 통해 보다 창의적이고 목적에 맞는 콘텐츠 생성이 가능해졌습니다.</p>
-                <img src="img/ui1.png" alt="new-wrtn" class="hidden lg:block min-w-[990px] h-auto">
+                <img src="img/ui1.png" alt="new-wrtn" class="hidden lg:block min-w-[990px] max-w-[990px] h-auto">
             </div>
         </section>
         <section id="section3" class="w-full bg-[#151515] pt-[150px] lg:pt-[190px] pb-[175px] lg:pb-[260px]">
@@ -954,7 +954,7 @@
             });
             // 최대 스크롤 위치 계산 함수
             function calculateMinRadius() {
-                return $(window).width() >= 1024 ? 30 : 28;
+                return $(window).width() >= 1024 ? 28.5 : 28;
             }
             function calculateMaxScroll() {
                 var uiImage;
@@ -969,7 +969,6 @@
                 var windowHeight = $(window).height();
                 var offset = $(window).width() >= 1024 ? 24 : 50;
                 var result = uiCenter - (windowHeight / 2) - (minRadius * 2) + offset;
-                console.log(result);
                 return result;
             }
 
