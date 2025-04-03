@@ -1186,13 +1186,15 @@
                 var scrollPos = $(window).scrollTop();
                 var asideShouldBeVisible = false;
                 var banner1Top = $('#banner1').offset().top - 250;
+                var banner2Top = $('#banner2').offset().top - 250;
                 var feature4Bottom = $('#feature4').offset().top + $('#feature4').outerHeight();
-                var section7Top = $('#section7').offset().top - 200;
 
                 // aside 표시 여부 결정
                 if (scrollPos + 100 < banner1Top) {
                     asideShouldBeVisible = true;
-                } else if (scrollPos + 100 >= $('#feature2').offset().top - 180 && scrollPos < section7Top) {
+                } else if (scrollPos + 100 >= $('#feature2').offset().top - 180 && scrollPos < banner1Top) {
+                    asideShouldBeVisible = true;
+                } else if (scrollPos + 100 >= banner1Top + 250 && scrollPos < banner2Top) {
                     asideShouldBeVisible = true;
                 }
 
