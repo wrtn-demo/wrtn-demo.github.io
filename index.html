@@ -1266,7 +1266,8 @@
                 const $indicators = $(bannerId + ' .indicator');
                 let currentSlide = 0;
                 const totalSlides = $slides.length;
-                let startX, moveX;
+                let startX, moveX, startY, moveY;
+                let isHorizontalSwipe = false;
                 let slideInterval;
 
                 // 슬라이드 이동 함수
@@ -1312,40 +1313,78 @@
                 // 터치 및 마우스 스와이프 이벤트 처리
                 $(bannerId).on('mousedown touchstart', function (e) {
                     clearInterval(slideInterval);
-                    startX = e.type === 'mousedown' ? e.pageX : e.originalEvent.touches[0].pageX;
+                    if (e.type === 'mousedown') {
+                        startX = e.pageX;
+                        startY = e.pageY;
+                    } else {
+                        startX = e.originalEvent.touches[0].pageX;
+                        startY = e.originalEvent.touches[0].pageY;
+                    }
+                    isHorizontalSwipe = false;
                 });
 
                 $(bannerId).on('mousemove touchmove', function (e) {
                     if (startX === undefined) return;
-                    e.preventDefault();
-                    moveX = e.type === 'mousemove' ? e.pageX : e.originalEvent.touches[0].pageX;
+                    
+                    if (e.type === 'mousemove') {
+                        moveX = e.pageX;
+                        moveY = e.pageY;
+                    } else {
+                        moveX = e.originalEvent.touches[0].pageX;
+                        moveY = e.originalEvent.touches[0].pageY;
+                    }
+                    
+                    // 수평 스와이프인지 수직 스와이프인지 판단
+                    if (!isHorizontalSwipe) {
+                        const diffX = Math.abs(moveX - startX);
+                        const diffY = Math.abs(moveY - startY);
+                        
+                        // 수평 이동이 수직 이동보다 크면 수평 스와이프로 판단
+                        if (diffX > diffY && diffX > 10) {
+                            isHorizontalSwipe = true;
+                            e.preventDefault(); // 수평 스와이프일 때만 기본 동작 방지
+                        }
+                    } else {
+                        e.preventDefault();
+                    }
                 });
 
                 $(bannerId).on('mouseup touchend', function (e) {
                     if (startX === undefined || moveX === undefined) {
                         startX = undefined;
                         moveX = undefined;
+                        startY = undefined;
+                        moveY = undefined;
+                        isHorizontalSwipe = false;
                         startInterval();
                         return;
                     }
 
-                    const diff = startX - moveX;
-                    if (Math.abs(diff) > 50) { // 50픽셀 이상 스와이프했을 때만 슬라이드 변경
-                        if (diff > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
+                    if (isHorizontalSwipe) {
+                        const diff = startX - moveX;
+                        if (Math.abs(diff) > 50) { // 50픽셀 이상 스와이프했을 때만 슬라이드 변경
+                            if (diff > 0) {
+                                nextSlide();
+                            } else {
+                                prevSlide();
+                            }
                         }
                     }
 
                     startX = undefined;
                     moveX = undefined;
+                    startY = undefined;
+                    moveY = undefined;
+                    isHorizontalSwipe = false;
                     startInterval();
                 });
 
                 $(bannerId).on('mouseleave', function () {
                     startX = undefined;
                     moveX = undefined;
+                    startY = undefined;
+                    moveY = undefined;
+                    isHorizontalSwipe = false;
                     startInterval();
                 });
             }
