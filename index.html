@@ -1049,9 +1049,12 @@
                 maxScroll = calculateMaxScroll();
             }
 
-            // 창 크기 변경 시 값 재계산
+            var lastWidth = $(window).width();
             $(window).resize(function () {
-                // 브라우저 창의 가로와 세로 중 더 큰 값을 기준으로 반지름 재설정
+                var currentWidth = $(window).width();
+                if (currentWidth === lastWidth) return;
+                
+                lastWidth = currentWidth;
                 initialRadius = Math.max($(window).width(), $(window).height()) / 1.5;
                 minRadius = calculateMinRadius();
                 maxScroll = calculateMaxScroll();
