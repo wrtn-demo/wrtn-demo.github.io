@@ -206,7 +206,7 @@
                 </div>
             </div>
         </section>
-        <section id="banner1" class="w-full relative lg:h-[560px]">
+        <section id="banner1" class="w-full relative lg:h-[410px]">
             <div class="banner-slider relative w-full h-full overflow-hidden">
                 <div class="slider-wrapper flex transition-transform duration-500 h-full">
                     <div class="banner-slide w-full flex-shrink-0 relative"
@@ -452,7 +452,7 @@
                 </div>
             </div>
         </section>
-        <section id="banner2" class="w-full relative lg:h-[560px]">
+        <section id="banner2" class="w-full relative lg:h-[410px]">
             <div class="banner-slider relative w-full h-full overflow-hidden">
                 <div class="slider-wrapper flex transition-transform duration-500 h-full">
                     <div class="banner-slide w-full flex-shrink-0 relative"
@@ -958,6 +958,7 @@
 
             var minRadius = calculateMinRadius();
             var maxScroll;
+            var lastScrollTop = 0; // 마지막 스크롤 위치 저장 변수
 
             $('.faq-item').on('click', function () {
                 // 아코디언 효과: height 기반으로 부드럽게 답변 영역 토글 (300ms)
@@ -1114,6 +1115,22 @@
             $(window).scroll(function () {
                 var scrollPos = $(window).scrollTop();
                 var headerHeight = $('header').outerHeight();
+                
+                // 헤더 표시/숨김 처리 (모바일에서만 적용)
+                var currentScrollTop = $(this).scrollTop();
+                if ($(window).width() < 1024) { // lg 미만 화면에서만 적용
+                    if (currentScrollTop > lastScrollTop && currentScrollTop > headerHeight) {
+                        // 아래로 스크롤 - 헤더 숨김
+                        $('header').css('transform', 'translateY(-100%)');
+                    } else {
+                        // 위로 스크롤 - 헤더 표시
+                        $('header').css('transform', 'translateY(0)');
+                    }
+                    lastScrollTop = currentScrollTop;
+                } else {
+                    // 데스크톱에서는 항상 헤더 표시
+                    $('header').css('transform', 'translateY(0)');
+                }
 
                 // aside 위치 조정
                 var feature1Top = $('#feature1').offset().top;
@@ -1423,6 +1440,9 @@
 
             // 페이지 로드 후 텍스트 애니메이션 시작
             setTimeout(animateTexts, 100);
+            
+            // 헤더에 트랜지션 효과 추가
+            $('header').css('transition', 'transform 0.3s ease');
         });
     </script>
 </body>
