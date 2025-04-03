@@ -1134,7 +1134,7 @@
                     var threshold = 0.6;
                     var progress = 1 - ((newRadius - minRadius) / (initialRadius - minRadius));
                     var sectionOpacity = progress > threshold ? (progress - threshold) / (1 - threshold) : 0;
-                    $('#section2').css('opacity', sectionOpacity);
+                    $('#section2').css('opacity', sectionOpacity + 0.1);
                 }
 
                 // 비디오 컨테이너 위치 업데이트
