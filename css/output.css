@@ -755,6 +755,12 @@
   .max-w-\[1440px\] {
     max-width: 1440px;
   }
+  .min-w-\[51px\] {
+    min-width: 51px;
+  }
+  .min-w-\[128px\] {
+    min-width: 128px;
+  }
   .min-w-\[160px\] {
     min-width: 160px;
   }
@@ -1170,6 +1176,9 @@
   .px-\[20px\] {
     padding-inline: 20px;
   }
+  .px-\[29px\] {
+    padding-inline: 29px;
+  }
   .px-\[30px\] {
     padding-inline: 30px;
   }
@@ -1488,6 +1497,9 @@
   .tracking-\[-4\.48px\] {
     --tw-tracking: -4.48px;
     letter-spacing: -4.48px;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
   }
   .text-\[\#85CD66\] {
     color: #85CD66;

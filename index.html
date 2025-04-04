@@ -97,12 +97,25 @@
     <header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between" style="height: 70px;z-index: 100;">
         <div class="mx-auto w-[1440px] px-[16px] lg:px-[100px] flex items-center justify-between">
             <div class="flex items-center">
-                <img src="/img/logo.png" alt="Wrtn Logo" class="w-[51px] h-auto" id="header-logo">
+                <img src="/img/logo.png" alt="Wrtn Logo" class="min-w-[51px] w-[51px] h-auto" id="header-logo">
             </div>
             <div>
                 <a href="https://wrtn.ai" target="_blank"
-                    class="border-[2px] border-white rounded-full w-[128px] h-[46px] text-white transition-all font-semibold flex items-center justify-center"
-                    id="try-button">사용해보기</a>
+                    class="whitespace-nowrap border-[2px] border-white rounded-full px-[29px] h-[46px] text-white transition-all font-semibold flex items-center justify-center"
+                    id="try-button">
+                    Coming Soon
+                </a>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const targetDate = new Date("2025-04-28T14:00:00+09:00");
+                        const now = new Date();
+                        if (now >= targetDate) {
+                            document.getElementById('try-button').textContent = "사용해보기";
+                        } else {
+                            document.getElementById('try-button').textContent = "Coming Soon";
+                        }
+                    });
+                </script>
             </div>
         </div>
     </header>
