@@ -1055,7 +1055,7 @@
                 var uiTop = uiImage.offset().top;
                 var uiCenter = uiTop + (uiHeight / 2);
                 // 여기서 windowHeight를 dynamicVhAlt로 변경
-                var windowHeight = dynamicVhAlt;
+                var windowHeight = $(window).height();
                 var offset = $(window).width() >= 1024 ? 24 : 50;
                 var result = uiCenter - (windowHeight / 2) - (minRadius * 2) + offset;
                 return result;
