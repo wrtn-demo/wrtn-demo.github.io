@@ -643,12 +643,12 @@
                 <div id="countdown"
                     class="text-black text-center count-font text-[92px] lg:text-[240px] font-normal leading-[90%]"
                     style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #D0D0D0;">
-                    96:54:32:01
+                    00:00:00:00
                 </div>
                 <p
                     class="text-[#E1E3E5] text-center text-[34px] font-semibold leading-[140%] tracking-[-0.68px] mt-[10px]">
                     완전히 새로워지는 뤼튼,<br class="lg:hidden"> 곧 만나요!</p>
-                <p class="text-[#958A85] text-center text-[28px] font-semibold leading-[140%] mt-[8px]">2025.4.28 오후 2시
+                <p class="text-[#958A85] text-center text-[28px] font-semibold leading-[140%] mt-[8px]">2025.4.28
                 </p>
             </div>
         </section>
@@ -977,7 +977,6 @@
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
-
         requestAnimationFrame(raf)
         $(function () {
             function updateCountdown() {
@@ -987,6 +986,7 @@
 
                 if (diff <= 0) {
                     $('#countdown').text("00:00:00:00");
+                    $('#section8').hide(); // 타겟 날짜가 지나면 section8 숨김
                     return;
                 }
 
@@ -996,6 +996,12 @@
                 const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
 
                 $('#countdown').text(`${days}:${hours}:${minutes}:${seconds}`);
+            }
+
+            // 페이지 로드 시 즉시 확인하여 타겟 날짜가 지났으면 section8 숨김
+            const targetDate = new Date("2025-04-28T14:00:00+09:00");
+            if (new Date() > targetDate) {
+                $('#section8').hide();
             }
 
             updateCountdown();
