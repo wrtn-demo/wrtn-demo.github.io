@@ -48,7 +48,10 @@
             border-color: #D3D3D3;
         }
 
-        .card, .card-title, .card-subtitle, .card-description {
+        .card,
+        .card-title,
+        .card-subtitle,
+        .card-description {
             transition: 0.3s ease-in-out;
         }
 
@@ -1020,7 +1023,9 @@
                 return $(window).width() >= 1024 ? 28.5 : 28;
             }
             function calculateMaxScroll() {
+                // dynamicVhAlt를 사용해 실제 보이는 뷰포트 높이를 가져옴
                 const dynamicVhAlt = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
                 var uiImage;
                 if ($(window).width() >= 1024) { // lg 기준 (1024px)
                     uiImage = $('img[src="img/ui1.png"]');
@@ -1030,7 +1035,8 @@
                 var uiHeight = uiImage.height();
                 var uiTop = uiImage.offset().top;
                 var uiCenter = uiTop + (uiHeight / 2);
-                var windowHeight = window.innerHeight;
+                // 여기서 windowHeight를 dynamicVhAlt로 변경
+                var windowHeight = dynamicVhAlt;
                 var offset = $(window).width() >= 1024 ? 24 : 50;
                 var result = uiCenter - (windowHeight / 2) - (minRadius * 2) + offset;
                 return result;
@@ -1222,7 +1228,7 @@
                 updateVideoContainer(scrollPos);
 
                 // 비디오 원형 크기 설정
-                $('#video-container').css('clip-path', 'circle(' + newRadius + 'px at center)');
+                $('#video-container').css('clip-path', 'circle(' + newRadius + 'px at 50% 50svh)');
 
                 // reveal-section 요소 활성화
                 $('.reveal-section').each(function () {
