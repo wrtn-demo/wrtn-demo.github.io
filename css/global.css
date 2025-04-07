@@ -1,5 +1,9 @@
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  color-scheme: light only;
+}
 body {
     word-break: keep-all;
 }
