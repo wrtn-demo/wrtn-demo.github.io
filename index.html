@@ -964,9 +964,7 @@
         $(function () {
             // 삼성 브라우저이면서 다크모드일 때만 .gt 클래스의 텍스트 색상 변경
             var browser = navigator.userAgent.toLowerCase();
-            alert(browser);
-            if (browser.indexOf("samsungbrowser") != -1 && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                alert('dark');
+            if (browser.indexOf("samsungbrowser") != -1) {
                 $('.gt').css({
                     'color': 'gray',
                     'background': 'none',
