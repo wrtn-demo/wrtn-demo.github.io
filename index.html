@@ -20,7 +20,6 @@
     <title>2025 뤼튼 3.0 업데이트</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/output.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -1004,7 +1003,7 @@
                 // 아코디언 효과: height 기반으로 부드럽게 답변 영역 토글 (300ms)
                 $(this).find('.faq-answer').slideToggle(300);
                 // 아이콘 회전 토글
-                $(this).find('.toggle-arrow').toggleClass('rotate-90');
+                $(this).find('.toggle-arrow').toggleClass('rotate-180');
             });
             // 최대 스크롤 위치 계산 함수
             function calculateMinRadius() {
