@@ -107,7 +107,7 @@
                 </a>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        const targetDate = new Date("2025-04-28T14:00:00+09:00");
+                        const targetDate = new Date("2025-04-28T20:00:00+09:00");
                         const now = new Date();
                         if (now >= targetDate) {
                             document.getElementById('try-button').textContent = "사용해보기";
@@ -961,7 +961,7 @@
         requestAnimationFrame(raf)
         $(function () {
             function updateCountdown() {
-                const targetDate = new Date("2025-04-28T14:00:00+09:00"); // 한국시간 4월 28일 오후 2시
+                const targetDate = new Date("2025-04-28T20:00:00+09:00"); // 한국시간 4월 28일 오후 2시
                 const now = new Date();
                 const diff = targetDate - now;
 
@@ -980,7 +980,7 @@
             }
 
             // 페이지 로드 시 즉시 확인하여 타겟 날짜가 지났으면 section8 숨김
-            const targetDate = new Date("2025-04-28T14:00:00+09:00");
+            const targetDate = new Date("2025-04-28T20:00:00+09:00");
             if (new Date() > targetDate) {
                 $('#section8').hide();
             }
