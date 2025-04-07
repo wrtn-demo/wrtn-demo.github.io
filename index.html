@@ -183,7 +183,7 @@
                 <div class="hidden lg:block w-[30%] pr-[30px]"></div>
                 <div class="w-full lg:w-[70%] reveal-section">
                     <p id="feature1" class="text-[#FF854D] text-[16px] font-semibold mb-[16px]">채팅</p>
-                    <p class="inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[40px] lg:mb-[30px]"
+                    <p class="gt inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[40px] lg:mb-[30px]"
                         style="background: linear-gradient(to right, rgba(248, 249, 251, 1), rgba(216, 183, 147, 1)); -webkit-background-clip: text; background-clip: text; color: transparent;">
                         강력한 <br>성능 업그레이드</p>
                     <p class="text-[16px] text-[#898989] leading-[140%] mb-[80px] font-semibold">목적 선택이나 고민 없이<br>최고의
@@ -264,7 +264,7 @@
                     <div class="hidden lg:block w-[30%] pr-[30px]"></div>
                     <div class="w-full lg:w-[70%] reveal-section">
                         <p id="feature2" class="text-[#FE68A4] text-[16px] font-semibold mb-[16px]">AI 서포터</p>
-                        <p class="inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px]"
+                        <p class="gt inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px]"
                             style="background: linear-gradient(90deg, #353A40 0%, #A35165 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             나를 위한 진화</p>
                         <p class="text-[16px] text-[#50575F] leading-[140%] mb-[80px] font-semibold">뤼튼의 AI 서포터는 사용하면
@@ -330,7 +330,7 @@
                     <div class="hidden lg:block w-[30%] pr-[30px]"></div>
                     <div class="w-full lg:w-[70%] reveal-section">
                         <p id="feature3" class="text-[#C8A333] text-[16px] font-semibold mb-[16px]">혜택</p>
-                        <p class="inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px]"
+                        <p class="gt inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px]"
                             style="background: linear-gradient(90deg, #353A40 0%, #A6956A 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                             무료를 넘어 소득까지</p>
                         <p class="text-[16px] text-[#50575F] leading-[140%] font-semibold mb-[4px] lg:mb-[3px]">가볍게 수행할
@@ -396,7 +396,7 @@
                         <p id="feature4" class="text-[#85CD66] text-[16px] font-semibold mb-[16px] opacity-100">도구
                         </p>
                         <p
-                            class="inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px] gradient-text">
+                            class="gt inline-block text-[40px] lg:text-[44px] font-bold leading-[120%] mb-[35px] lg:mb-[30px] gradient-text">
                             업무의 처음부터 끝까지</p>
 
                         <p class="text-[16px] text-[#898989] leading-[140%] font-semibold mb-[80px]">업무와 과제에 특화된
@@ -526,7 +526,7 @@
         <section id="section7"
             class="max-w-[1440px] mx-auto px-[30px] lg:px-[100px] pt-[150px] pb-[130px] lg:pb-[165px] bg-white">
             <div class="flex flex-col items-center justify-center reveal-section">
-                <p class="text-center text-[16px] font-semibold leading-[140%] tracking-[-0.32px] inline-block mb-[8px]"
+                <p class="gt text-center text-[16px] font-semibold leading-[140%] tracking-[-0.32px] inline-block mb-[8px]"
                     style="background: linear-gradient(90deg, #EE2D27 0%, #CE4FA8 44%, #5423D0 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
                     더 강력해진 뤼튼, 이렇게 달라집니다</p>
                 <p
@@ -962,6 +962,15 @@
         }
         requestAnimationFrame(raf)
         $(function () {
+            // 삼성 브라우저이면서 다크모드일 때만 .gt 클래스의 텍스트 색상 변경
+            var browser = navigator.userAgent.toLowerCase();
+            if (browser.indexOf("samsungbrowser") != -1 && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('.gt').css({
+                    'color': 'gray',
+                    'background': 'none',
+                    '-webkit-text-fill-color': 'gray'
+                });
+            }
             function updateCountdown() {
                 const targetDate = new Date("2025-04-28T20:00:00+09:00"); // 한국시간 4월 28일 오후 2시
                 const now = new Date();
