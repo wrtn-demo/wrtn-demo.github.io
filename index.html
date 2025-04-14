@@ -11,8 +11,8 @@
     <meta name="description" content="나만의 AI 서포터를 새로워진 뤼튼에서 만나보세요!">
     <meta name="keywords" content="뤼튼, AI, 채팅, 서포터, 도구, 혜택, 뤼튼 3.0">
     <meta name="author" content="Wrtn Technologies">
-	<meta name="color-scheme" content="light only"/>
-	<meta name="supported-color-schemes" content="light"/>
+    <meta name="color-scheme" content="light only" />
+    <meta name="supported-color-schemes" content="light" />
 
     <link rel="shortcut icon" href="https://wrtn.ai/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="https://wrtn.ai/images/favicon-16x16.png">
@@ -165,7 +165,8 @@
             <div class="flex flex-col items-center justify-between font-semibold">
                 <img id="ui1-m" src="./img/ui1_m.png" alt="new-wrtn"
                     class="block lg:hidden min-w-[394px] w-[394px] h-auto rounded-[16px] mb-[12px]">
-                <img id="ui1" src="./img/ui1.png" alt="new-wrtn" class="hidden lg:block min-w-[990px] max-w-[990px] h-auto mb-[80px]">
+                <img id="ui1" src="./img/ui1.png" alt="new-wrtn"
+                    class="hidden lg:block min-w-[990px] max-w-[990px] h-auto mb-[80px]">
                 <p class="text-[16px] text-[#F28C3E] mb-[12px]">새로운 뤼튼</p>
                 <p
                     class="text-[36px] lg:text-[38px] text-[#353A40] leading-[140%] text-center mb-[18px] tracking-[-1.14px]">
@@ -862,7 +863,8 @@
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px] max-w-[800px]">
-                                    뤼튼 '캐릭터 챗'이 '크랙'으로 변경되었습니다. '크랙'은 <a href="https://crack.wrtn.ai" target="_blank" class="underline">crack.wrtn.ai</a> 에서 사용하시거나, 모바일 Google Play 혹은 Apple
+                                    뤼튼 '캐릭터 챗'이 '크랙'으로 변경되었습니다. '크랙'은 <a href="https://crack.wrtn.ai" target="_blank"
+                                        class="underline">crack.wrtn.ai</a> 에서 사용하시거나, 모바일 Google Play 혹은 Apple
                                     App Store에서 '크랙' 검색 후 다운로드 하여 사용하실 수 있습니다.
                                 </p>
                             </div>
@@ -904,7 +906,8 @@
                             </div>
                             <div class="faq-answer mt-[16px]" style="display: none;">
                                 <p class="text-[#353A40] text-[16px] leading-[24px] tracking-[-0.32px] max-w-[800px]">
-                                    <a href="https://help.wrtn.ai" target="_blank" class="underline">help.wrtn.ai</a> 에 접속하셔서 문의주시면
+                                    <a href="https://help.wrtn.ai" target="_blank" class="underline">help.wrtn.ai</a> 에
+                                    접속하셔서 문의주시면
                                     답변드리겠습니다.
                                 </p>
                             </div>
@@ -955,6 +958,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="./maintenance.js"></script>
     <script>
         const lenis = new Lenis()
         function raf(time) {
@@ -962,12 +966,23 @@
             requestAnimationFrame(raf)
         }
         requestAnimationFrame(raf)
+        const maintenanceModeActive = isMaintenanceMode();
+
         $(function () {
+            // 점검중 메인 텍스트 수정
+            if (maintenanceModeActive) {
+                $('#text1').text('현재 뤼튼 3.0 업데이트 중이에요');
+                $('#text2').text('');
+                $('#text3').text('');
+                $('#text1-mobile').html('현재 뤼튼 3.0<br>업데이트 중이에요');
+                $('#text2-mobile').text('');
+                $('#subText').html('업데이트가 완료되면<br>새로워진 뤼튼을 만날 수 있어요');
+            }
             // 삼성 브라우저이면서 다크모드일 때만 .gt 클래스의 텍스트 색상 변경
             var browser = navigator.userAgent.toLowerCase();
             if (browser.indexOf("samsungbrowser") != -1) {
                 // 다크모드 감지 함수 사용
-                onForcedDarkMode(function() {
+                onForcedDarkMode(function () {
                     $('.gt').css({
                         'color': 'gray',
                         'background': 'none',
@@ -977,13 +992,13 @@
             }
             // 다크모드 감지 함수
             function onForcedDarkMode(callback) {
-                if(navigator.userAgent.match(/Samsung/i) && window.matchMedia && !window.matchMedia('(prefers-color-scheme:dark)').matches) {
+                if (navigator.userAgent.match(/Samsung/i) && window.matchMedia && !window.matchMedia('(prefers-color-scheme:dark)').matches) {
                     const img = new Image();
-                    img.onload = function() {
+                    img.onload = function () {
                         const ctx = document.createElement('canvas').getContext('2d');
                         ctx.drawImage(img, 0, 0);
                         const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
-                        if((r & b & g) < 255)
+                        if ((r & b & g) < 255)
                             callback();
                     };
                     img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IndoaXRlIi8+PC9zdmc+';
@@ -1489,21 +1504,30 @@
 
             // 텍스트 애니메이션 함수
             function animateTexts() {
-                $('#text1').addClass('animate-fade-up');
-                setTimeout(function () {
-                    $('#text2').addClass('animate-fade-up');
+                if (maintenanceModeActive) {
+                    $('#text1').addClass('animate-fade-up');
                     $('#text1-mobile').addClass('animate-fade-up');
-
                     setTimeout(function () {
-                        $('#text3').addClass('animate-fade-up');
-                        $('#text2-mobile').addClass('animate-fade-up');
+                        $('.text-group').css('opacity', '0.5');
+                        $('#subText').addClass('animate-fade-up');
+                    }, 600);
+                } else {
+                    $('#text1').addClass('animate-fade-up');
+                    setTimeout(function () {
+                        $('#text2').addClass('animate-fade-up');
+                        $('#text1-mobile').addClass('animate-fade-up');
 
                         setTimeout(function () {
-                            $('.text-group').css('opacity', '0.5');
-                            $('#subText').addClass('animate-fade-up');
-                        }, 760);
-                    }, 600);
-                }, 400);
+                            $('#text3').addClass('animate-fade-up');
+                            $('#text2-mobile').addClass('animate-fade-up');
+
+                            setTimeout(function () {
+                                $('.text-group').css('opacity', '0.5');
+                                $('#subText').addClass('animate-fade-up');
+                            }, 760);
+                        }, 600);
+                    }, 400);
+                }
             }
 
             // 페이지 로드 후 텍스트 애니메이션 시작
