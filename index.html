@@ -544,6 +544,11 @@
             </style>
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('[data-animate="true"]').forEach(el => {
+                        el.classList.remove('in-view');
+                        el.style.opacity = '0';
+                    });
+                    
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
